@@ -199,8 +199,10 @@ p{margin:0}
 .trade span svg{width:18px;height:18px}
 .trade:focus-visible{outline:3px solid var(--y);outline-offset:3px}
 .trades-note{text-align:center;color:var(--muted);font-size:16.5px;margin-top:26px}
-@media (max-width:960px){.trades{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:640px){.trades{grid-template-columns:1fr 1fr;gap:12px}.trade span{font-size:17px;left:14px;right:14px;bottom:12px}.trade span i{width:30px;height:30px}}
+@media (max-width:700px){.trades{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.trades{gap:12px}.trade span{font-size:16.5px;left:12px;right:12px;bottom:12px}.trade span i{width:28px;height:28px}}
+.trade span{min-width:0}
+.trade span{overflow-wrap:anywhere}
 
 /* ---------- Deux visages ---------- */
 .duo{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(36px,5vw,72px);align-items:center}
@@ -218,22 +220,15 @@ p{margin:0}
 
 /* ---------- Comment ça marche (étapes en photos) ---------- */
 .flow{display:grid;grid-template-columns:1fr 1fr;gap:26px;counter-reset:s}
-@media (min-width:1101px){
-  .fstep{display:grid;grid-template-columns:44% 1fr}
-  .fstep .ph{aspect-ratio:auto;min-height:300px}
-  .fstep .ph img{position:absolute;inset:0}
-  .fstep-body{display:flex;flex-direction:column;justify-content:center;padding:34px 34px 34px 40px}
-  .fstep-body::before{position:static;margin-bottom:6px;border:0}
-  .fstep h3{margin-top:14px}
-}
+
 .fstep{background:var(--w);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
 .fstep:hover{transform:translateY(-4px);box-shadow:var(--shadow-h)}
 .fstep .ph{aspect-ratio:4/3}
 .fstep-body{padding:26px 30px 30px;position:relative}
 .fstep-body::before{counter-increment:s;content:counter(s);position:absolute;top:-28px;left:22px;width:56px;height:56px;border-radius:18px;background:var(--k);color:var(--y);font-family:var(--head);font-weight:800;font-size:22px;display:flex;align-items:center;justify-content:center;border:4px solid var(--w)}
 .fstep:last-child .fstep-body::before{background:var(--y);color:var(--k)}
-.fstep h3{font-size:22px;font-weight:800;margin:32px 0 10px}
-.fstep p{color:var(--muted);font-size:16.5px;line-height:1.7}
+.fstep h3{font-size:23px;font-weight:800;margin:34px 0 12px}
+.fstep p{color:var(--muted);font-size:17px;line-height:1.7;max-width:540px}
 .fstep p + p{margin-top:8px}
 .how-cap{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:34px}
 @media (max-width:1100px){.flow{grid-template-columns:1fr 1fr}}
