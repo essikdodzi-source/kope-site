@@ -64,6 +64,14 @@
       if (target) target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
     });
     input.addEventListener('input', function () { apply(input.value); });
+    document.querySelectorAll('.trade').forEach(function (tile) {
+      tile.addEventListener('click', function () {
+        input.value = tile.getAttribute('data-q') || '';
+        apply(input.value);
+        var target = document.getElementById('categories');
+        if (target) target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      });
+    });
     document.querySelectorAll('.chip').forEach(function (chip) {
       chip.addEventListener('click', function () {
         input.value = chip.textContent;
