@@ -224,6 +224,7 @@ p{margin:0}
 .fstep{background:var(--w);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
 .fstep:hover{transform:translateY(-4px);box-shadow:var(--shadow-h)}
 .fstep .ph{aspect-ratio:4/3}
+@media (min-width:821px){.fstep .ph{aspect-ratio:16/9}}
 .fstep-body{padding:26px 30px 30px;position:relative}
 .fstep-body::before{counter-increment:s;content:counter(s);position:absolute;top:-28px;left:22px;width:56px;height:56px;border-radius:18px;background:var(--k);color:var(--y);font-family:var(--head);font-weight:800;font-size:22px;display:flex;align-items:center;justify-content:center;border:4px solid var(--w)}
 .fstep:last-child .fstep-body::before{background:var(--y);color:var(--k)}
