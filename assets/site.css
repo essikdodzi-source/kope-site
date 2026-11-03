@@ -201,8 +201,9 @@ p{margin:0}
 .trades-note{text-align:center;color:var(--muted);font-size:16.5px;margin-top:26px}
 @media (max-width:700px){.trades{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.trades{gap:12px}.trade span{font-size:16.5px;left:12px;right:12px;bottom:12px}.trade span i{width:28px;height:28px}}
-.trade span{min-width:0}
-.trade span{overflow-wrap:anywhere}
+/* Flèche dans le coin de la photo : le nom du métier garde toute la largeur */
+.trade span{display:block;line-height:1.2}
+.trade span i{position:absolute;right:0;top:-46px}
 
 /* ---------- Deux visages ---------- */
 .duo{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(36px,5vw,72px);align-items:center}
