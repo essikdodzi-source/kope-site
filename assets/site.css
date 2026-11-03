@@ -377,3 +377,4 @@ p{margin:0}
   .rv{opacity:1;transform:none;transition:none}
   *{transition:none!important}
 }
+@media (min-width:701px) and (max-width:1100px){.trade span{font-size:15px;left:12px;right:12px;bottom:12px}.trade span i{width:30px;height:30px;top:-40px}}
