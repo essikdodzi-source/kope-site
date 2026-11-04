@@ -176,7 +176,8 @@ p{margin:0}
 .cat.yel .cat-body,.cat.blk .cat-body{padding:30px 32px}
 /* Deux cartes sans photo en bandeau : icône à gauche, texte à droite */
 @media (min-width:1101px){
-  .cat.yel,.cat.blk{grid-column:span 2}
+  .cat.yel{grid-column:span 2}
+  .cat.blk{grid-column:span 3}
   .cat.yel .cat-body,.cat.blk .cat-body{display:grid;grid-template-columns:64px 1fr auto;grid-template-rows:auto auto;column-gap:20px;row-gap:4px;align-items:center}
   .cat.yel .ic,.cat.blk .ic{grid-row:span 2;width:64px;height:64px;border-radius:20px}
   .cat.yel .go,.cat.blk .go{grid-column:3;grid-row:1/span 2;margin:0;padding:12px 18px;border-radius:999px;background:var(--w);color:var(--k)}
@@ -189,7 +190,7 @@ p{margin:0}
 @media (max-width:520px){.cats{grid-template-columns:1fr;gap:16px}.cat h3{font-size:20px}}
 
 /* ---------- Métiers en photos ---------- */
-.trades{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.trades{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
 .trade{position:relative;border:0;padding:0;margin:0;font:inherit;text-align:left;cursor:pointer;border-radius:22px;overflow:hidden;aspect-ratio:3/4;background:#ddd;color:var(--w);box-shadow:var(--shadow)}
 .trade img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .trade:hover img{transform:scale(1.04)}
@@ -199,6 +200,7 @@ p{margin:0}
 .trade span svg{width:18px;height:18px}
 .trade:focus-visible{outline:3px solid var(--y);outline-offset:3px}
 .trades-note{text-align:center;color:var(--muted);font-size:16.5px;margin-top:26px}
+@media (max-width:1100px){.trades{grid-template-columns:repeat(5,1fr);gap:12px}}
 @media (max-width:700px){.trades{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.trades{gap:12px}.trade span{font-size:16.5px;left:12px;right:12px;bottom:12px}.trade span i{width:28px;height:28px}}
 /* Flèche dans le coin de la photo : le nom du métier garde toute la largeur */
