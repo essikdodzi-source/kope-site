@@ -67,7 +67,7 @@
       </ul>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-o" href="mailto:contact@kopetogo.com">Nous écrire</a>
+      <a class="btn btn-o" href="https://wa.me/212636371063?text=Bonjour%20Kop%C3%A9%2C%20" target="_blank" rel="noopener">Nous écrire</a>
       <a class="btn btn-y" href="#telecharger">Obtenir l'appli</a>
       <button class="burger" type="button" aria-label="Ouvrir le menu" aria-controls="menu" aria-expanded="false"><span></span></button>
     </div>
@@ -422,8 +422,8 @@
         <h2>Ensemble, comme au village.</h2>
         <p>L'inscription se fait dans l'application Android : identité, téléphone et adresse, une seule fois, pour être client et prestataire.</p>
         <div class="row">
-          <a class="btn btn-y" href="mailto:contact@kopetogo.com?subject=Je%20veux%20rejoindre%20Kop%C3%A9"><svg><use href="#i-phone"/></svg>Être prévenu du lancement</a>
-          <a class="btn btn-ow" href="mailto:contact@kopetogo.com?subject=Devenir%20prestataire%20Kop%C3%A9">Devenir prestataire</a>
+          <a class="btn btn-y" href="https://wa.me/212636371063?text=Bonjour%20Kop%C3%A9%2C%20" target="_blank" rel="noopener" data-form="launch"><svg><use href="#i-phone"/></svg>Être prévenu du lancement</a>
+          <a class="btn btn-ow" href="https://wa.me/212636371063?text=Bonjour%20Kop%C3%A9%2C%20" target="_blank" rel="noopener" data-form="provider">Devenir prestataire</a>
         </div>
         <span class="soon">Bientôt sur Google Play</span>
       </div>
@@ -452,12 +452,30 @@
       </div>
       <div>
         <h4>Contact</h4>
-        <ul><li><a href="mailto:contact@kopetogo.com">contact@kopetogo.com</a></li><li><a href="confidentialite.html">Confidentialité</a></li><li><a href="#apropos">À propos</a></li></ul>
+        <ul><li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact@kopetogo.com" target="_blank" rel="noopener">contact@kopetogo.com</a></li><li><a href="https://wa.me/212636371063?text=Bonjour%20Kop%C3%A9%2C%20" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="confidentialite.html">Confidentialité</a></li><li><a href="#apropos">À propos</a></li></ul>
       </div>
     </div>
     <div class="foot-bot"><span>© <span id="year">2026</span> Kopé · Tous droits réservés</span><span>Dernière mise à jour : 3 novembre 2026</span></div>
   </div>
 </footer>
+
+<!-- Formulaire : être prévenu du lancement / devenir prestataire -->
+<dialog class="kform" id="kform" aria-labelledby="kform-t">
+  <form method="dialog" class="kform-in" novalidate>
+    <button class="kform-x" type="submit" value="close" aria-label="Fermer">×</button>
+    <h3 id="kform-t">Être prévenu du lancement</h3>
+    <p class="kform-sub">Laissez vos coordonnées : l'équipe Kopé vous prévient dès que l'appli est disponible.</p>
+    <input type="hidden" name="topic" value="launch">
+    <label>Votre nom<input name="name" autocomplete="name" maxlength="60" required></label>
+    <label>Téléphone (WhatsApp) ou e-mail<input name="contact" autocomplete="tel" maxlength="80" required></label>
+    <label>Quartier ou ville<input name="place" maxlength="60" placeholder="Ex. : Bè, Agoè, Kpalimé…"></label>
+    <label>Message (facultatif)<textarea name="message" rows="3" maxlength="500"></textarea></label>
+    <label class="kform-hp" aria-hidden="true">Site<input name="website" tabindex="-1" autocomplete="off"></label>
+    <p class="kform-msg" role="status"></p>
+    <button class="btn btn-y kform-send" type="button">Envoyer</button>
+    <a class="kform-wa" href="https://wa.me/212636371063?text=Bonjour%20Kop%C3%A9%2C%20" target="_blank" rel="noopener">Ou écrivez-nous sur WhatsApp</a>
+  </form>
+</dialog>
 
 <script src="assets/site.js" defer></script>
 </body>

@@ -86,3 +86,41 @@
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 })();
+
+// Formulaire « Être prévenu du lancement » / « Devenir prestataire » : le message arrive dans Kopé Admin.
+(function () {
+  var d = document.getElementById('kform');
+  if (!d || typeof d.showModal !== 'function') return; // navigateur trop ancien : le lien WhatsApp reste
+  var f = d.querySelector('form'), msg = d.querySelector('.kform-msg'), send = d.querySelector('.kform-send');
+  var T = { launch: ['Être prévenu du lancement', "Laissez vos coordonnées : l'équipe Kopé vous prévient dès que l'appli est disponible."],
+            provider: ['Devenir prestataire', "Dites-nous votre métier et votre quartier : l'équipe Kopé vous recontacte pour votre inscription."] };
+  var API = 'https://nkohlcactttqoljejpsv.supabase.co/functions/v1/kope/api/public/sitecontact';
+  document.querySelectorAll('[data-form]').forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      e.preventDefault();
+      var k = T[b.getAttribute('data-form')] ? b.getAttribute('data-form') : 'launch';
+      f.elements['topic'].value = k; d.querySelector('h3').textContent = T[k][0]; d.querySelector('.kform-sub').textContent = T[k][1];
+      msg.textContent = ''; msg.className = 'kform-msg'; send.disabled = false; send.textContent = 'Envoyer';
+      d.showModal();
+    });
+  });
+  d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+  send.addEventListener('click', function () {
+    var name = f.elements['name'].value.trim(), contact = f.elements['contact'].value.trim();
+    if (!name || contact.replace(/\s/g, '').length < 6) { msg.className = 'kform-msg err'; msg.textContent = 'Indiquez votre nom et votre téléphone ou e-mail.'; return; }
+    var text = (f.elements['place'].value.trim() ? 'Lieu : ' + f.elements['place'].value.trim() + '\n' : '') + f.elements['message'].value.trim();
+    send.disabled = true; send.textContent = 'Envoi…'; msg.className = 'kform-msg'; msg.textContent = '';
+    fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ topic: f.elements['topic'].value, name: name, contact: contact, message: text, website: f.elements['website'].value }) })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (x) {
+        if (!x.ok) throw new Error((x.j && x.j.error) || 'Envoi impossible.');
+        msg.className = 'kform-msg ok'; msg.textContent = 'Merci ' + name + ' ! Votre message est bien arrivé chez l\'équipe Kopé.';
+        send.textContent = 'Envoyé'; f.reset();
+      })
+      .catch(function (e) {
+        msg.className = 'kform-msg err'; msg.textContent = (e && e.message && e.message !== 'Failed to fetch' ? e.message : 'Pas de connexion.') + ' Réessayez, ou écrivez-nous sur WhatsApp.';
+        send.disabled = false; send.textContent = 'Envoyer';
+      });
+  });
+})();

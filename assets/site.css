@@ -403,3 +403,20 @@ p{margin:0}
 .pub.hl{background:var(--y);border-color:var(--y)}
 .pub.hl p{color:#3b3600}
 @media (max-width:960px){.pubs{grid-template-columns:1fr}}
+
+/* Formulaire du site */
+.kform{border:0;padding:0;border-radius:28px;width:min(520px,calc(100% - 32px));box-shadow:var(--shadow-h);background:var(--w);color:var(--ink)}
+.kform::backdrop{background:rgba(17,17,17,.55)}
+.kform-in{position:relative;display:flex;flex-direction:column;gap:14px;padding:clamp(24px,4vw,36px);max-height:calc(100dvh - 48px);overflow:auto}
+.kform h3{font-size:24px;font-weight:800;padding-right:36px}
+.kform-sub{color:var(--muted);font-size:15.5px;line-height:1.6;margin:-6px 0 4px}
+.kform label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14.5px}
+.kform input,.kform textarea{font:inherit;font-weight:400;font-size:16px;padding:13px 14px;border:1px solid var(--line);border-radius:14px;background:var(--bg);color:var(--ink);width:100%}
+.kform input:focus,.kform textarea:focus{outline:2px solid var(--y);border-color:var(--y);background:var(--w)}
+.kform-hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.kform-x{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--w);font-size:24px;line-height:1;cursor:pointer;color:var(--ink)}
+.kform-send{justify-content:center;width:100%}
+.kform-msg{font-size:15px;min-height:0;margin:0}
+.kform-msg.err{color:#B3261E}
+.kform-msg.ok{color:#1E7B34;font-weight:600}
+.kform-wa{text-align:center;font-weight:600;font-size:14.5px;color:var(--ink)}
