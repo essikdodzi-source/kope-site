@@ -124,3 +124,16 @@
       });
   });
 })();
+
+// Compteur de visites (sans cookie) : la page vue, la provenance et la taille d'écran ; rien qui identifie la personne.
+(function () {
+  try {
+    var first = false;
+    try { first = !sessionStorage.getItem('kv'); sessionStorage.setItem('kv', '1'); } catch (_) { first = true; }
+    var q = new URLSearchParams(location.search);
+    var body = JSON.stringify({ p: location.pathname, r: first ? document.referrer : '', src: first ? (q.get('utm_source') || q.get('src') || '') : '',
+      w: window.screen ? screen.width : 0, n: first });
+    fetch('https://nkohlcactttqoljejpsv.supabase.co/functions/v1/kope/api/public/sitevisit',
+      { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: body, keepalive: true }).catch(function () {});
+  } catch (_) {}
+})();
