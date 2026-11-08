@@ -92,8 +92,8 @@
   var d = document.getElementById('kform');
   if (!d || typeof d.showModal !== 'function') return; // navigateur trop ancien : le lien WhatsApp reste
   var f = d.querySelector('form'), msg = d.querySelector('.kform-msg'), send = d.querySelector('.kform-send');
-  var T = { launch: ['Être prévenu du lancement', "Laissez vos coordonnées : l'équipe Kɔpé vous prévient dès que l'appli est disponible."],
-            provider: ['Devenir prestataire', "Dites-nous votre métier et votre quartier : l'équipe Kɔpé vous recontacte pour votre inscription."] };
+  var T = { launch: ['Être prévenu du lancement', "Laissez vos coordonnées : l'équipe Kɔƒe vous prévient dès que l'appli est disponible."],
+            provider: ['Devenir prestataire', "Dites-nous votre métier et votre quartier : l'équipe Kɔƒe vous recontacte pour votre inscription."] };
   var API = 'https://nkohlcactttqoljejpsv.supabase.co/functions/v1/kope/api/public/sitecontact';
   document.querySelectorAll('[data-form]').forEach(function (b) {
     b.addEventListener('click', function (e) {
@@ -115,7 +115,7 @@
       .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (x) {
         if (!x.ok) throw new Error((x.j && x.j.error) || 'Envoi impossible.');
-        msg.className = 'kform-msg ok'; msg.textContent = 'Merci ' + name + ' ! Votre message est bien arrivé chez l\'équipe Kɔpé.';
+        msg.className = 'kform-msg ok'; msg.textContent = 'Merci ' + name + ' ! Votre message est bien arrivé chez l\'équipe Kɔƒe.';
         send.textContent = 'Envoyé'; f.reset();
       })
       .catch(function (e) {
