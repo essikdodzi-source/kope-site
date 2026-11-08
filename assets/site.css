@@ -420,3 +420,8 @@ p{margin:0}
 .kform-msg.err{color:#B3261E}
 .kform-msg.ok{color:#1E7B34;font-weight:600}
 .kform-wa{text-align:center;font-weight:600;font-size:14.5px;color:var(--ink)}
+
+/* Métiers mis en valeur après « Découvrir » une catégorie */
+.trade.pick{outline:4px solid var(--y);outline-offset:3px;animation:kpick 1s ease-in-out 3}
+@keyframes kpick{50%{transform:scale(1.04)}}
+@media (prefers-reduced-motion:reduce){.trade.pick{animation:none}}

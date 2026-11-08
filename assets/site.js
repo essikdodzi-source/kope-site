@@ -137,3 +137,21 @@
       { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: body, keepalive: true }).catch(function () {});
   } catch (_) {}
 })();
+
+// « Découvrir » une catégorie : on descend aux métiers et on met en valeur ceux qui correspondent.
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.go[data-show]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var sec = document.getElementById('metiers'); if (!sec) return;
+      e.preventDefault();
+      var want = a.getAttribute('data-show').split(',');
+      var tiles = Array.prototype.slice.call(document.querySelectorAll('.trade'));
+      tiles.forEach(function (t) { t.classList.remove('pick'); });
+      var first = null;
+      tiles.forEach(function (t) { if (want.indexOf(t.getAttribute('data-q')) !== -1) { t.classList.add('pick'); first = first || t; } });
+      (first || sec).scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      setTimeout(function () { tiles.forEach(function (t) { t.classList.remove('pick'); }); }, 4000);
+    });
+  });
+})();
