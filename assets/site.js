@@ -142,7 +142,8 @@
 // dans la page. Sans réponse du serveur, les chiffres écrits dans la page restent affichés.
 (function () {
   var els = document.querySelectorAll('[data-tarif]');
-  if (!els.length || !window.fetch) return;
+  var afters = document.querySelectorAll('[data-tarif-after]');
+  if ((!els.length && !afters.length) || !window.fetch) return;
   fetch('https://nkohlcactttqoljejpsv.supabase.co/functions/v1/kope/api/public/tarifs')
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (t) {
@@ -150,6 +151,16 @@
       els.forEach(function (e) {
         var v = t[e.getAttribute('data-tarif')];
         if (typeof v === 'number' && isFinite(v)) e.textContent = String(v);
+      });
+      // Tarif de lancement : compté pour chaque prestataire à partir de la validation de son inscription.
+      var a = t.after || {};
+      var ok = typeof a.provider === 'number' && a.months > 0 && a.provider !== t.provider;
+      afters.forEach(function (e) {
+        var k = e.getAttribute('data-tarif-after');
+        e.textContent = !ok ? '' : k === 'en'
+          ? ' during the first ' + a.months + ' months after their registration is approved, then ' + a.provider + '%'
+          : k === 'short' ? ', puis ' + a.provider + ' % après ' + a.months + ' mois'
+          : ' pendant les ' + a.months + ' premiers mois après la validation de son inscription, puis ' + a.provider + ' %';
       });
     }).catch(function () {});
 })();
