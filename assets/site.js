@@ -138,6 +138,22 @@
   } catch (_) {}
 })();
 
+// Commissions affichées : lues sur le serveur à chaque visite (réglées dans Kɔƒe Admin), jamais figées
+// dans la page. Sans réponse du serveur, les chiffres écrits dans la page restent affichés.
+(function () {
+  var els = document.querySelectorAll('[data-tarif]');
+  if (!els.length || !window.fetch) return;
+  fetch('https://nkohlcactttqoljejpsv.supabase.co/functions/v1/kope/api/public/tarifs')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (t) {
+      if (!t) return;
+      els.forEach(function (e) {
+        var v = t[e.getAttribute('data-tarif')];
+        if (typeof v === 'number' && isFinite(v)) e.textContent = String(v);
+      });
+    }).catch(function () {});
+})();
+
 // « Découvrir » une catégorie : on descend aux métiers et on met en valeur ceux qui correspondent.
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
