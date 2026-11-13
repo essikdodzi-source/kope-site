@@ -87,13 +87,13 @@
   if (y) y.textContent = new Date().getFullYear();
 })();
 
-// Formulaire « Être prévenu du lancement » / « Devenir prestataire » : le message arrive dans Kopé Admin.
+// Formulaire « Être prévenu du lancement » / « Donnez un coup de main et gagnez des sous » : le message arrive dans Kopé Admin.
 (function () {
   var d = document.getElementById('kform');
   if (!d || typeof d.showModal !== 'function') return; // navigateur trop ancien : le lien WhatsApp reste
   var f = d.querySelector('form'), msg = d.querySelector('.kform-msg'), send = d.querySelector('.kform-send');
   var T = { launch: ['Être prévenu du lancement', "Laissez vos coordonnées : l'équipe Kɔƒe vous prévient dès que l'appli est disponible."],
-            provider: ['Devenir prestataire', "Dites-nous votre métier et votre quartier : l'équipe Kɔƒe vous recontacte pour votre inscription."] };
+            provider: ['Donnez un coup de main et gagnez des sous', "Pas besoin de diplôme : dites-nous ce que vous savez faire et votre quartier. L'équipe Kɔƒe vous recontacte pour votre inscription."] };
   var API = 'https://nkohlcactttqoljejpsv.supabase.co/functions/v1/kope/api/public/sitecontact';
   document.querySelectorAll('[data-form]').forEach(function (b) {
     b.addEventListener('click', function (e) {
