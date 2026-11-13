@@ -437,3 +437,9 @@ img.zoom:focus-visible{outline:3px solid var(--y);outline-offset:3px}
 .lb-x{position:fixed;top:14px;right:16px;width:46px;height:46px;border-radius:50%;border:0;background:var(--y);color:var(--k);font-size:28px;line-height:1;cursor:pointer}
 .head-c .lead a{color:inherit;text-decoration-color:var(--y);text-decoration-thickness:2px;text-underline-offset:3px}
 .cat .go[data-form]{cursor:pointer}
+
+/* Séjour : sur deux colonnes, la troisième carte prend toute la largeur (jamais seule dans un coin) */
+@media (max-width:960px) and (min-width:641px){
+  .examples .ex:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+  .examples .ex:last-child:nth-child(odd) .ex-top{aspect-ratio:auto;height:100%;min-height:240px}
+}
