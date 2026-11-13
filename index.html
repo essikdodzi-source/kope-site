@@ -2,33 +2,445 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow, noarchive">
-<title>Kɔƒe — Bientôt disponible</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kɔƒe — Tes voisins prêts à t'aider</title>
+<meta name="description" content="Kɔƒe : tes voisins prêts à t'aider, partout au Togo. Réparations, ménage, coiffure, courses, déménagement, champ : dites ce qu'il vous faut, ou donnez un coup de main et gagnez un peu de sous. En ville (Kɔme) comme au village (Kɔƒe).">
+<meta name="theme-color" content="#0E0E0E">
+<meta property="og:title" content="Kɔƒe — Tes voisins prêts à t'aider">
+<meta property="og:description" content="Dites ce qu'il vous faut : les voisins qui savent le faire vous font leur prix, et vous vous entendez dans l'appli.">
+<meta property="og:image" content="https://kopetogo.com/assets/img/banniere-kope.webp">
+<meta property="og:url" content="https://kopetogo.com/">
 <link rel="icon" href="assets/img/favicon.png">
-<style>
-  :root { --y: #FFD400; --k: #111; --m: #6b6b66; --bg: #faf9f6; }
-  * { box-sizing: border-box; margin: 0; }
-  body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px 16px;
-         background: var(--bg); color: var(--k); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 440px; text-align: center; }
-  img { width: 96px; height: 96px; }
-  h1 { font-size: 30px; margin: 18px 0 8px; letter-spacing: -0.5px; }
-  .bar { width: 48px; height: 5px; border-radius: 3px; background: var(--y); margin: 0 auto 18px; }
-  p { color: var(--m); }
-  a { color: var(--k); font-weight: 600; }
-  footer { margin-top: 28px; font-size: 13px; color: var(--m); }
-  footer a { color: var(--m); font-weight: 500; margin: 0 6px; }
-</style>
+<link rel="apple-touch-icon" href="assets/img/logo-kope-hd.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="preload" as="image" href="assets/img/client-demande.webp">
 </head>
-<body>
+<body id="top">
+
+<!-- Icônes -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></g></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></g></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3.5 17.2a1.8 1.8 0 0 0 2.5 2.5l5.8-5.8a4 4 0 0 0 5.1-5.4l-2.6 2.6-2.3-.4-.4-2.3 2.6-2.6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-broom" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 3l-7 7"/><path d="M9 10l5 5-2 6c-3-1-6-3-8-6l5-5z"/><path d="M7 16l2-2"/></g></symbol>
+    <symbol id="i-scissors" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 8.1L20 20M8.1 15.9L20 4"/></g></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></g></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></g></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19l7-7"/></g></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></g></symbol>
+    <symbol id="i-moto" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M9 17h5l3-6h-4l-2-3H8M15 7h3"/></g></symbol>
+    <symbol id="i-hammer" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6l4 4-9.5 9.5a2.1 2.1 0 0 1-3-3L14 6z"/><path d="M12 4l3-1 6 6-1 3"/></g></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M16 12.5h2M3 9h15V6"/></g></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15L6 16z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></g></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l3 3-3 3"/><path d="M4 12V9a3 3 0 0 1 3-3h13"/><path d="M7 21l-3-3 3-3"/><path d="M20 12v3a3 3 0 0 1-3 3H4"/></g></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.8.7 3 2.5 3.5 5.2"/></g></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></g></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 12V4h8l10 10-8 8L3 12z"/><circle cx="7.5" cy="8.5" r="1.5"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6l8.5 7 8.5-7"/></g></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 19h19"/><path d="M3 13.5l3.5 1 4-1.2L7 8.5l2-.6 6 4.2 4.3-1.3a1.6 1.6 0 0 1 .9 3.1L6.5 17.5 3 13.5z"/></g></symbol>
+    <symbol id="i-bed" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V6M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.6"/></g></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v10h16V10"/><path d="M3 10l2-6h14l2 6a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/><path d="M10 20v-5h4v5"/></g></symbol>
+    <symbol id="i-ship" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15l2 4h14l2-4H3z"/><path d="M6 15V9h12v6M9 9V5h6v4"/><path d="M2 21.5c2 0 2-1 4-1s2 1 4 1 2-1 4-1 2 1 4 1 2-1 4-1"/></g></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3z"/><path d="M9 8h6M9 12h6M9 16h3"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18.5h2"/></g></symbol>
+  </defs>
+</svg>
+
+<!-- Navigation -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top" aria-label="Kɔƒe, accueil"><img src="assets/img/logo-kope-hd.png" alt="" width="58" height="58">Kɔƒe</a>
+    <nav aria-label="Navigation principale">
+      <ul class="menu" id="menu">
+        <li><a href="#top" class="on">Accueil</a></li>
+        <li><a href="#didiwo">Wò didiwo</a></li>
+        <li><a href="#tamesusuwo">Wò tamesusuwo</a></li>
+        <li><a href="#sejour">Séjour au pays</a></li>
+        <li><a href="guide.html">Mode d'emploi</a></li>
+        <li><a href="#apropos">À propos</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-o" href="https://wa.me/212636371063?text=Bonjour%20Kop%C3%A9%2C%20" target="_blank" rel="noopener">Nous écrire</a>
+      <a class="btn btn-y" href="#telecharger">Obtenir l'appli</a>
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-controls="menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
 <main>
-  <img src="assets/img/logo-kope-hd.png" alt="Kɔƒe">
-  <h1>Bientôt disponible</h1>
-  <div class="bar"></div>
-  <p>Notre site est en préparation. Pour toute question : <a href="mailto:contact@kopetogo.com">contact@kopetogo.com</a></p>
-  <p lang="en" style="margin-top:10px">Coming soon. Contact: <a href="mailto:contact@kopetogo.com">contact@kopetogo.com</a></p>
-  <footer><a href="confidentialite.html">Confidentialité</a>·<a href="suppression-compte.html">Supprimer mon compte</a></footer>
+
+<!-- Accueil -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="rv">
+      <div class="hero-brand">
+        <img src="assets/img/logo-kope-hd.png" alt="Logo Kɔƒe" width="128" height="128">
+        <div><b>Kɔƒe</b><small>Tes voisins prêts à t'aider</small></div>
+      </div>
+      <span class="eyebrow">Au Togo · en ville comme au village</span>
+      <h1>Personne ne doit rester <span class="mark">seul</span> face à une difficulté.</h1>
+      <p class="lead">Dans votre quartier, des voisins ont du savoir-faire, de la force et un peu de temps. Dites ce qu'il vous faut : ils vous font leur prix et vous vous entendez dans l'appli. Et si c'est vous qui savez faire, donnez un coup de main et gagnez un peu de sous.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-y" href="#didiwo">J'ai besoin d'un coup de main <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-o" href="#tamesusuwo">Je donne un coup de main</a>
+      </div>
+      <div class="hero-pills">
+        <span class="pill"><svg><use href="#i-shield"/></svg>On sait qui vient chez vous</span>
+        <span class="pill"><svg><use href="#i-lock"/></svg>Payé au travail bien fait</span>
+        <span class="pill"><svg><use href="#i-star"/></svg>Avis des deux côtés</span>
+      </div>
+    </div>
+    <div class="hero-visual rv">
+      <div class="frame"><img src="assets/img/client-demande.webp" srcset="assets/img/client-demande-800.webp 800w, assets/img/client-demande.webp 1600w" sizes="(max-width:1000px) 100vw, 56vw" alt="Une voisine confie ses sacs de charbon à un jeune du quartier" width="1600" height="900" fetchpriority="high"></div>
+      <div class="float f1"><span class="ic"><svg><use href="#i-pin"/></svg></span><span>Distance affichée<small>pour choisir au plus près</small></span></div>
+      <div class="float f2"><span class="ic"><svg><use href="#i-check"/></svg></span><span>Commission claire<small><span data-tarif="client">5</span> % pour vous · <span data-tarif="provider">5</span> % pour celui qui aide<span data-tarif-after="short"></span></small></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Pourquoi Kɔƒe -->
+<section class="section manif" id="pourquoi">
+  <div class="wrap"><div class="manif-in">
+    <span class="eyebrow rv">Pourquoi Kɔƒe</span>
+    <h2 class="title rv">Marcher des heures sans le sou, <span class="mark">en demandant à chaque porte</span> ?</h2>
+    <div class="manif-txt rv">
+      <p>À Lomé et autour, des milliers de jeunes ont la force, le savoir-faire et l'envie de travailler. Ce qui leur manque, c'est une adresse où aller, et quelques pièces pour s'y rendre.</p>
+      <p>Sous le soleil qui brûle, sur les routes noyées par la pluie, chercher un petit job coûte souvent plus qu'il ne rapporte. Pourtant, à deux rues de là, quelqu'un cherche une main pour laver, porter, réparer, livrer ou cuisiner.</p>
+      <p>Kɔƒe relie ces deux personnes, sur le téléphone que presque tout le monde a déjà. Celui qui demande paie avant le début du travail, et celui qui aide reçoit son dû quand le travail est dit bien fait.</p>
+    </div>
+    <p class="manif-end rv">Ce qui est convenu est payé.<span>Kɔƒe, la dignité du travail à portée de main.</span></p>
+  </div></div>
+</section>
+
+<!-- Wò didiwo : demander un coup de main -->
+<section class="section alt" id="didiwo">
+  <div class="wrap">
+    <div class="head-c rv">
+      <span class="eyebrow">J'ai besoin d'un coup de main</span>
+      <h2 class="title">Wò didiwo, le Kɔme alo le Kɔƒe</h2>
+      <p class="lead">Vos besoins, en ville comme au village. Cherchez ce qu'il vous faut : dans l'appli, votre demande part vers les voisins les plus proches.</p>
+    </div>
+    <div class="band rv"><img src="assets/img/quartier-entraide.webp" srcset="assets/img/quartier-entraide-900.webp 900w, assets/img/quartier-entraide.webp 1536w" sizes="(max-width:1320px) 100vw, 1240px" alt="Dans le quartier, chacun trouve de l'aide ou en donne : porter, réparer, nettoyer, cuisiner, livrer, construire" width="1536" height="768" loading="lazy"></div>
+    <form class="search-box rv" id="search" role="search">
+      <label class="field"><svg><use href="#i-search"/></svg><span class="sr">Ce qu'il vous faut</span><input id="q" type="search" placeholder="Ex. : robinet, ménage, tresses…" autocomplete="off"></label>
+      <label class="field"><svg><use href="#i-pin"/></svg><span class="sr">Lieu</span><input type="text" placeholder="Votre quartier ou village" autocomplete="off"></label>
+      <button class="btn btn-k" type="submit">Chercher</button>
+    </form>
+    <div class="chips rv" aria-label="Suggestions">
+      <button class="chip" type="button">Plomberie</button>
+      <button class="chip" type="button">Électricité</button>
+      <button class="chip" type="button">Ménage</button>
+      <button class="chip" type="button">Coiffure</button>
+      <button class="chip" type="button">Déménagement</button>
+      <button class="chip" type="button">Champ</button>
+    </div>
+
+    <div class="cats" id="categories">
+      <article class="cat big rv" data-k="maison réparation plomberie plombier robinet électricité électricien menuiserie menuisier maçonnerie maçon peinture toiture toit dépannage mécanique mécanicien voiture panne">
+        <div class="ph"><img src="assets/img/hero-kope.webp" alt="Un plombier montre son prix dans l'appli Kɔƒe à une famille" width="1600" height="900" loading="lazy"></div>
+        <div class="cat-body">
+          <span class="ic"><svg><use href="#i-wrench"/></svg></span>
+          <h3>Maison et réparations</h3>
+          <p>Robinet, prise, porte, mur, toit, voiture en panne : un voisin qui sait faire passe chez vous.</p>
+          <a class="go" href="#entraide" data-show="Électricité,Maçonnerie,Peinture,Menuiserie,Toiture,Mécanique">Voir qui peut aider <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="cat rv" data-k="ménage nettoyage entretien lessive repassage">
+        <div class="ph"><img src="assets/img/menage-terrasse.webp" srcset="assets/img/menage-terrasse-800.webp 800w, assets/img/menage-terrasse.webp 1536w" sizes="(max-width:960px) 100vw, 50vw" alt="Une jeune femme frotte la cour" width="800" height="533" loading="lazy"></div>
+        <div class="cat-body">
+          <span class="ic"><svg><use href="#i-broom"/></svg></span>
+          <h3>Ménage et lessive</h3>
+          <p>Nettoyer, laver, repasser, une fois ou chaque semaine.</p>
+          <a class="go" href="#entraide" data-show="Ménage,Lessive">Voir qui peut aider <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="cat rv" data-k="courses livraison commissions marché course colis">
+        <div class="ph"><img src="assets/img/courses-commissionnaire.webp" srcset="assets/img/courses-commissionnaire-800.webp 800w, assets/img/courses-commissionnaire.webp 1536w" sizes="(max-width:960px) 100vw, 50vw" alt="Un commissionnaire achète du ciment pour un voisin, qui valide dans l'appli" width="800" height="533" loading="lazy"></div>
+        <div class="cat-body">
+          <span class="ic"><svg><use href="#i-bag"/></svg></span>
+          <h3>Courses et livraisons</h3>
+          <p>Le marché, le ciment, un colis : un voisin achète et vous livre.</p>
+          <a class="go" href="#entraide" data-show="Courses,Livraison">Voir qui peut aider <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="cat rv" data-k="déménagement transport déplacement chauffeur moto taxi porter">
+        <div class="ph"><img src="assets/img/demenagement-colis.webp" srcset="assets/img/demenagement-colis-800.webp 800w, assets/img/demenagement-colis.webp 1536w" sizes="(max-width:960px) 100vw, 50vw" alt="Un jeune déménageur et un voisin âgé confirment le déménagement dans l'appli" width="800" height="450" loading="lazy"></div>
+        <div class="cat-body">
+          <span class="ic"><svg><use href="#i-truck"/></svg></span>
+          <h3>Déménager, porter, transporter</h3>
+          <p>Des bras et un véhicule pour vos affaires.</p>
+          <a class="go" href="#entraide" data-show="Déménagement,Livraison">Voir qui peut aider <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="cat rv" data-k="champ agriculture désherbage récolte village bois">
+        <div class="ph"><img src="assets/img/champ-houe.webp" alt="Un jeune désherbe un champ de maïs à la houe" width="374" height="332" loading="lazy"></div>
+        <div class="cat-body">
+          <span class="ic"><svg><use href="#i-leaf"/></svg></span>
+          <h3>Au champ</h3>
+          <p>Désherber, récolter, porter les sacs : la force du village.</p>
+          <a class="go" href="#village">Voir au village <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="cat rv" data-k="beauté coiffure coiffeur coiffeuse tresses barbier maquillage">
+        <div class="ph"><img src="assets/img/metier-coiffeuse.webp" alt="Une coiffeuse fait des tresses à une voisine" width="380" height="332" loading="lazy"></div>
+        <div class="cat-body">
+          <span class="ic"><svg><use href="#i-scissors"/></svg></span>
+          <h3>Coiffure et beauté</h3>
+          <p>Tresses, coupe, barbe, à la maison.</p>
+          <a class="go" href="#entraide" data-show="Coiffure">Voir qui peut aider <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="cat blk rv" data-k="autres aide cuisine jardinage soutien scolaire cours répétiteur">
+        <div class="cat-body">
+          <span class="ic"><svg><use href="#i-users"/></svg></span>
+          <h3>Et tout le reste</h3>
+          <p>Décrivez simplement ce qu'il vous faut, avec vos mots : vos voisins vous répondent.</p>
+          <a class="go" href="#telecharger" data-form="launch">Être prévenu du lancement <svg><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+    </div>
+    <p class="no-cat">Rien ne correspond ici. Dans l'appli, décrivez votre besoin avec vos mots : il sera envoyé aux voisins les plus proches.</p>
+  </div>
+</section>
+
+<!-- Entraide : les domaines -->
+<section class="section" id="entraide">
+  <div class="wrap">
+    <div class="head-l rv">
+      <div>
+        <span class="eyebrow">Au village, personne ne reste seul face à une difficulté</span>
+        <h2 class="title">Chacun peut aider, chacun peut être aidé.</h2>
+      </div>
+      <p class="lead">Dans tous ces domaines, vous trouvez de l'aide près de chez vous. Et si vous savez faire l'une de ces choses, vous pouvez aider à votre tour et gagner un peu de sous. Touchez un domaine pour voir ce qu'on y demande.</p>
+    </div>
+    <div class="trades">
+      <button class="trade rv" type="button" data-q="Électricité"><img src="assets/img/metier-electricien.webp" alt="Un électricien installe une ampoule chez une voisine" width="380" height="336" loading="lazy"><span>Électricité <i><svg><use href="#i-arrow"/></svg></i></span></button>
+      <button class="trade rv" type="button" data-q="Mécanique"><img src="assets/img/metier-mecanique.webp" alt="Un mécanicien arrive en moto pour une voiture en panne" width="380" height="336" loading="lazy"><span>Mécanique <i><svg><use href="#i-arrow"/></svg></i></span></button>
+      <button class="trade rv" type="button" data-q="Maçonnerie"><img src="assets/img/metier-macon.webp" alt="Un jeune maçon monte un mur de parpaings" width="380" height="336" loading="lazy"><span>Maçonnerie <i><svg><use href="#i-arrow"/></svg></i></span></button>
+      <button class="trade rv" type="button" data-q="Peinture"><img src="assets/img/metier-peintre.webp" alt="Un jeune repeint un mur en jaune" width="380" height="336" loading="lazy"><span>Peinture <i><svg><use href="#i-arrow"/></svg></i></span></button>
+      <button class="trade rv" type="button" data-q="Menuiserie"><img src="assets/img/metier-menuisier.webp" alt="Un menuisier construit une boutique en bois" width="380" height="336" loading="lazy"><span>Menuiserie <i><svg><use href="#i-arrow"/></svg></i></span></button>
+      <button class="trade rv" type="button" data-q="Toiture"><img src="assets/img/metier-toiture.webp" alt="Un jeune refait un toit de paille au village" width="380" height="336" loading="lazy"><span>Toiture <i><svg><use href="#i-arrow"/></svg></i></span></button>
+      <button class="trade rv" type="button" data-q="Ménage"><img src="assets/img/metier-agente-menage.webp" alt="Un jeune homme lave le sol" width="380" height="336" loading="lazy"><span>Ménage <i><svg><use href="#i-arrow"/></svg></i></span></button>
+      <button class="trade rv" type="button" data-q="Lessive"><img src="assets/img/metier-lessive-cour.webp" alt="Une femme fait la lessive dans la cour" width="380" height="336" loading="lazy"><span>Lessive <i><svg><use href="#i-arrow"/></svg></i></span></button>
+      <button class="trade rv" type="button" data-q="Cuisine"><img src="assets/img/metier-cuisine.webp" alt="Une cuisinière prépare un buffet de fête" width="380" height="336" loading="lazy"><span>Cuisine <i><svg><use href="#i-arrow"/></svg></i></span></button>
+      <button class="trade rv" type="button" data-q="Coiffure"><img src="assets/img/metier-coiffure.webp" alt="Un jeune homme tresse les cheveux d'une fillette" width="380" height="336" loading="lazy"><span>Coiffure <i><svg><use href="#i-arrow"/></svg></i></span></button>
+      <button class="trade rv" type="button" data-q="Jardinage"><img src="assets/img/metier-jardinage.webp" alt="Un jardinier arrose une pelouse" width="380" height="336" loading="lazy"><span>Jardinage <i><svg><use href="#i-arrow"/></svg></i></span></button>
+      <button class="trade rv" type="button" data-q="Déménagement"><img src="assets/img/metier-demenageur.webp" alt="Un jeune homme porte des sacs de maïs" width="380" height="336" loading="lazy"><span>Déménagement <i><svg><use href="#i-arrow"/></svg></i></span></button>
+      <button class="trade rv" type="button" data-q="Livraison"><img src="assets/img/metier-transport.webp" alt="Un transporteur au volant de son camion" width="380" height="336" loading="lazy"><span>Livraison <i><svg><use href="#i-arrow"/></svg></i></span></button>
+      <button class="trade rv" type="button" data-q="Courses"><img src="assets/img/metier-courses.webp" alt="Des voisines au marché" width="380" height="336" loading="lazy"><span>Courses <i><svg><use href="#i-arrow"/></svg></i></span></button>
+      <button class="trade rv" type="button" data-q="Soutien scolaire"><img src="assets/img/metier-soutien-scolaire.webp" alt="Un jeune aide un écolier en mathématiques" width="380" height="336" loading="lazy"><span>Soutien scolaire <i><svg><use href="#i-arrow"/></svg></i></span></button>
+    </div>
+    <p class="trades-note">Ce que vous savez faire n'est pas dans la liste ? Dans l'appli, chaque demande et chaque coup de main se décrivent avec vos propres mots.</p>
+  </div>
+</section>
+
+<!-- En quelques gestes -->
+<section class="section alt" id="gestes">
+  <div class="wrap">
+    <div class="head-c rv">
+      <span class="eyebrow">En quelques gestes</span>
+      <h2 class="title">Demandez. Comparez. Accordez-vous.</h2>
+      <p class="lead">Tout se passe dans l'appli. <a href="guide.html">Voir le mode d'emploi</a></p>
+    </div>
+    <ol class="flow" style="list-style:none;margin:0;padding:0">
+      <li class="fstep rv">
+        <div class="ph"><img src="assets/img/client-kope.webp" alt="Une famille cherche un répétiteur dans l'appli Kɔƒe" width="1400" height="788" loading="lazy"></div>
+        <div class="fstep-body"><h3>Vous dites ce qu'il vous faut</h3><p>Ce que vous voulez, votre quartier, le jour et votre budget. Ajoutez des photos si cela aide.</p></div>
+      </li>
+      <li class="fstep rv">
+        <div class="ph"><img src="assets/img/cuisiniere-proposition.webp" srcset="assets/img/cuisiniere-proposition-800.webp 800w, assets/img/cuisiniere-proposition.webp 1600w" sizes="(max-width:960px) 100vw, 50vw" alt="Une cuisinière photographie ses plats pour sa proposition dans l'appli Kɔƒe" width="800" height="451" loading="lazy" style="object-position:70% 50%"></div>
+        <div class="fstep-body"><h3>Vos voisins proposent</h3><p>Ils voient votre demande et la distance, puis vous envoient leur prix, leur jour et leur heure, avec les photos de ce qu'ils ont déjà fait.</p></div>
+      </li>
+      <li class="fstep rv">
+        <div class="ph"><img src="assets/img/accord-menuisier.webp" srcset="assets/img/accord-menuisier-800.webp 800w, assets/img/accord-menuisier.webp 1600w" sizes="(max-width:960px) 100vw, 50vw" alt="Une commerçante montre au menuisier la boutique voulue dans l'appli Kɔƒe" width="800" height="450" loading="lazy" style="object-position:65% 50%"></div>
+        <div class="fstep-body"><h3>Vous vous accordez</h3><p>Prix et conditions se fixent dans la discussion. Le travail est fait, photos à l'appui.</p></div>
+      </li>
+      <li class="fstep rv">
+        <div class="ph"><img src="assets/img/travail-confirme.webp" srcset="assets/img/travail-confirme-800.webp 800w, assets/img/travail-confirme.webp 1600w" sizes="(max-width:960px) 100vw, 50vw" alt="Le voisin confirme le travail dans l'appli Kɔƒe, le jeune déménageur est payé" width="800" height="450" loading="lazy"></div>
+        <div class="fstep-body"><h3>« C'est bien fait »</h3><p>Celui qui a aidé est payé quand vous le confirmez. Puis chacun note l'autre.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Wò tamesusuwo : donner un coup de main -->
+<section class="section" id="tamesusuwo">
+  <div class="wrap pro">
+    <div class="pro-imgs rv">
+      <div class="frame"><img src="assets/img/porteur-sacs.webp" alt="Un jeune homme porte des sacs de maïs" width="1400" height="788" loading="lazy"></div>
+      <div class="frame"><img src="assets/img/gain-recu.webp" alt="Une jeune femme voit son gain arriver sur son téléphone après le ménage" width="1600" height="900" loading="lazy"></div>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Donnez un coup de main et gagnez des sous</span>
+      <h2 class="title">Wò tamesusuwo, le dɔtsɔtsɔ ŋu</h2>
+      <p class="lead">Ni diplôme ni qualification ? Vos bras et votre savoir suffisent. Porter des sacs, désherber un champ, arroser un jardin, faire une course, repeindre un mur : près de chez vous, des voisins ont besoin d'un coup de main. Jeune, dame ou monsieur, ces petites tâches vous rapportent de quoi payer quelques-uns de vos besoins.</p>
+      <div class="perks">
+        <div class="perk"><span class="ic"><svg><use href="#i-pin"/></svg></span><div><b>Des occasions tout près</b><span>Les demandes de votre quartier arrivent sur votre téléphone.</span></div></div>
+        <div class="perk"><span class="ic"><svg><use href="#i-tag"/></svg></span><div><b>Votre prix, votre heure</b><span>Vous proposez, vous vous entendez.</span></div></div>
+        <div class="perk"><span class="ic"><svg><use href="#i-wallet"/></svg></span><div><b>Payé au travail bien fait</b><span>Ce qui est convenu est payé.</span></div></div>
+        <div class="perk"><span class="ic"><svg><use href="#i-star"/></svg></span><div><b>On vous fait confiance</b><span>Vos photos et les avis donnent envie de vous rappeler.</span></div></div>
+      </div>
+      <a class="btn btn-y" href="#telecharger" data-form="provider">Je donne un coup de main <svg><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- Au village -->
+<section class="section village" id="village">
+  <div class="wrap">
+    <div class="head-l rv">
+      <div>
+        <span class="eyebrow">Au village aussi</span>
+        <h2 class="title">La force du village, à portée de téléphone.</h2>
+      </div>
+      <p class="lead">Récoltes, sacs à porter jusqu'au marché, maison à bâtir, repas de fête : les habitants de votre village prêts à vous prêter main-forte, pour une journée ou plus.</p>
+    </div>
+    <div class="mosaic rv">
+      <figure><img src="assets/img/recolte-cacao.webp" srcset="assets/img/recolte-cacao-700.webp 700w, assets/img/recolte-cacao.webp 1180w" sizes="(max-width:960px) 100vw, 45vw" alt="Des femmes récoltent des cabosses de cacao" loading="lazy"><figcaption>Récolte</figcaption></figure>
+      <figure class="wide"><img src="assets/img/village-entraide.webp" srcset="assets/img/village-entraide-900.webp 900w, assets/img/village-entraide.webp 1536w" sizes="(max-width:960px) 100vw, 55vw" alt="Au village, on construit, on porte, on cuisine, on soigne et on s'entraide" loading="lazy"><figcaption>Entraide</figcaption></figure>
+      <figure><img src="assets/img/village-transport.webp" srcset="assets/img/village-transport-800.webp 800w, assets/img/village-transport.webp 1600w" sizes="(max-width:960px) 100vw, 30vw" alt="Un transporteur et son camion chargé de sacs de charbon" loading="lazy" style="object-position:30% 40%"><figcaption>Transport</figcaption></figure>
+      <figure><img src="assets/img/cuisine-maison.webp" srcset="assets/img/cuisine-maison-800.webp 800w, assets/img/cuisine-maison.webp 1536w" sizes="(max-width:960px) 100vw, 30vw" alt="Une jeune maman vend du riz au bord de la route" loading="lazy" style="object-position:55% 40%"><figcaption>Repas</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- Séjour au pays -->
+<section class="section" id="sejour">
+  <div class="wrap">
+    <div class="head-c rv">
+      <span class="eyebrow">De l'étranger ou d'une autre ville</span>
+      <h2 class="title">Votre séjour au pays, préparé depuis votre téléphone.</h2>
+      <p class="lead">Chauffeur, logement, courses avant l'arrivée : tout est sur un même tableau, avec des gens qu'on connaît. Et pour un parent resté au pays, faites faire même de loin : vous voyez les photos du travail fini avant qu'il soit payé.</p>
+    </div>
+    <div class="examples">
+      <article class="ex rv">
+        <div class="ex-top"><img src="assets/img/sejour-aeroport.webp" srcset="assets/img/sejour-aeroport-800.webp 800w, assets/img/sejour-aeroport.webp 1536w" sizes="(max-width:960px) 100vw, 33vw" alt="Un chauffeur attend un voyageur à l'aéroport de Lomé" loading="lazy"><span class="tag">À l'arrivée</span></div>
+        <div class="ex-body"><h3>Chauffeur et voiture</h3><p>Quelqu'un vous attend à l'aéroport, puis vous conduit pendant le séjour.</p></div>
+      </article>
+      <article class="ex rv">
+        <div class="ex-top"><img src="assets/img/sejour-logement.webp" srcset="assets/img/sejour-logement-800.webp 800w, assets/img/sejour-logement.webp 1536w" sizes="(max-width:960px) 100vw, 33vw" alt="Une propriétaire remet les clés d'une villa à un voyageur" loading="lazy"><span class="tag">Logement</span></div>
+        <div class="ex-body"><h3>Chambre, studio ou maison</h3><p>À la nuit ou au mois, avec photos et vidéos. Vous réservez avant de partir.</p></div>
+      </article>
+      <article class="ex rv">
+        <div class="ex-top"><img src="assets/img/courses-commissionnaire.webp" srcset="assets/img/courses-commissionnaire-800.webp 800w, assets/img/courses-commissionnaire.webp 1536w" sizes="(max-width:960px) 100vw, 33vw" alt="Un commissionnaire achète pour un client qui valide à distance" loading="lazy"><span class="tag">Même de loin</span></div>
+        <div class="ex-body"><h3>Courses et achats pour vos proches</h3><p>Un voisin achète, envoie la photo du ticket et livre. Les boutiques partenaires montrent leurs prix.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Confiance -->
+<section class="section alt" id="confiance">
+  <div class="wrap">
+    <div class="head-c rv">
+      <span class="eyebrow">Confiance</span>
+      <h2 class="title">Pensé pour que chacun soit rassuré</h2>
+    </div>
+    <div class="trust">
+      <div class="tr hl rv"><span class="ic"><svg><use href="#i-shield"/></svg></span><h3>On sait qui est qui</h3><p>Personne n'entre sur Kɔƒe sans qu'on sache qui il est, et chacun montre ce qu'il sait faire.</p></div>
+      <div class="tr rv"><span class="ic"><svg><use href="#i-lock"/></svg></span><h3>Payé au travail bien fait</h3><p>Celui qui aide n'est payé qu'après votre « c'est bien fait ».</p></div>
+      <div class="tr rv"><span class="ic"><svg><use href="#i-chat"/></svg></span><h3>Tout est écrit</h3><p>Prix, jour et heure restent dans l'appli, consultables à tout moment.</p></div>
+      <div class="tr rv"><span class="ic"><svg><use href="#i-star"/></svg></span><h3>Avis des deux côtés</h3><p>Chacun note l'autre après le travail : les meilleurs sont mis en avant.</p></div>
+      <div class="tr rv"><span class="ic"><svg><use href="#i-users"/></svg></span><h3>Quelqu'un vous répond</h3><p>Un souci, une question ? Écrivez-nous depuis l'appli.</p></div>
+      <div class="tr rv"><span class="ic"><svg><use href="#i-check"/></svg></span><h3>Vos données à vous</h3><p>Vous pouvez supprimer votre compte vous-même. <a href="confidentialite.html">En savoir plus</a></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Deux visages -->
+<section class="section" id="apropos">
+  <div class="wrap duo">
+    <div class="duo-img rv"><img src="assets/img/kome-kope.webp" alt="Kɔƒe, un seul compte, deux visages : Kɔme en ville, Kɔƒe au village" width="900" height="900" loading="lazy"></div>
+    <div class="rv">
+      <span class="eyebrow">À propos de Kɔƒe</span>
+      <h2 class="title">Un seul compte, deux visages.</h2>
+      <p class="lead">Kɔƒe est né d'une idée simple : retrouver, avec un téléphone, l'entraide du quartier et du village. Le même compte sert pour demander un coup de main et pour en donner.</p>
+      <div class="duo-cards">
+        <div class="mini k"><b>Kɔme</b><span>En ville : réparations, ménage, coiffure, courses et livraisons dans votre quartier.</span></div>
+        <div class="mini"><b>Kɔƒe</b><span>Au village : champ, transport, construction et coups de main, entre voisins.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Rejoindre -->
+<section class="section alt" id="telecharger">
+  <div class="wrap">
+    <div class="cta rv">
+      <div>
+        <div class="cta-brand"><img src="assets/img/logo-kope-hd.png" alt="" width="76" height="76"><img class="word" src="assets/img/kope-mot.png" alt="Kɔƒe" width="102" height="42"></div>
+        <span class="eyebrow">Rejoindre Kɔƒe</span>
+        <h2>Ensemble, comme au village.</h2>
+        <p>L'inscription se fait dans l'application Android, une seule fois, pour demander et pour aider.</p>
+        <div class="row">
+          <a class="btn btn-y" href="https://wa.me/212636371063?text=Bonjour%20Kop%C3%A9%2C%20" target="_blank" rel="noopener" data-form="launch"><svg><use href="#i-phone"/></svg>Être prévenu du lancement</a>
+          <a class="btn btn-ow" href="https://wa.me/212636371063?text=Bonjour%20Kop%C3%A9%2C%20" target="_blank" rel="noopener" data-form="provider">Je donne un coup de main</a>
+        </div>
+        <span class="soon">Bientôt sur Google Play</span>
+      </div>
+      <div class="cta-img"><img src="assets/img/banniere-kope.webp" alt="Kɔƒe : ensemble, comme au village. Demandez, comparez, accordez-vous." width="1024" height="500" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
 </main>
+
+<!-- Pied de page -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top"><img src="assets/img/logo-kope-hd.png" alt="" width="72" height="72">Kɔƒe</a>
+        <p>Tes voisins prêts à t'aider, un savoir-faire au bout des doigts. Lancement au Togo.</p>
+      </div>
+      <div>
+        <h4>Demander</h4>
+        <ul><li><a href="#didiwo">Demander un coup de main</a></li><li><a href="guide.html">Mode d'emploi</a></li><li><a href="#sejour">Séjour au pays</a></li><li><a href="#telecharger">Obtenir l'appli</a></li></ul>
+      </div>
+      <div>
+        <h4>Aider</h4>
+        <ul><li><a href="#tamesusuwo">Donner un coup de main</a></li><li><a href="conditions.html">Conditions d'utilisation</a></li><li><a href="suppression-compte.html">Supprimer son compte</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact@kopetogo.com" target="_blank" rel="noopener">contact@kopetogo.com</a></li><li><a href="https://wa.me/212636371063?text=Bonjour%20Kop%C3%A9%2C%20" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="confidentialite.html">Confidentialité</a></li><li><a href="#apropos">À propos</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bot"><span>© <span id="year">2026</span> Kɔƒe · Tous droits réservés</span><span>Dernière mise à jour : 8 novembre 2026</span></div>
+  </div>
+</footer>
+
+<!-- Formulaire : être prévenu du lancement / donner un coup de main -->
+<dialog class="kform" id="kform" aria-labelledby="kform-t">
+  <form method="dialog" class="kform-in" novalidate>
+    <button class="kform-x" type="submit" value="close" aria-label="Fermer">×</button>
+    <h3 id="kform-t">Être prévenu du lancement</h3>
+    <p class="kform-sub">Laissez vos coordonnées : l'équipe Kɔƒe vous prévient dès que l'appli est disponible.</p>
+    <input type="hidden" name="topic" value="launch">
+    <label>Votre nom<input name="name" autocomplete="name" maxlength="60" required></label>
+    <label>Téléphone (WhatsApp) ou e-mail<input name="contact" autocomplete="tel" maxlength="80" required></label>
+    <label>Quartier ou ville<input name="place" maxlength="60" placeholder="Ex. : Bè, Agoè, Kpalimé…"></label>
+    <label>Message (facultatif)<textarea name="message" rows="3" maxlength="500"></textarea></label>
+    <label class="kform-hp" aria-hidden="true">Site<input name="website" tabindex="-1" autocomplete="off"></label>
+    <p class="kform-msg" role="status"></p>
+    <button class="btn btn-y kform-send" type="button">Envoyer</button>
+    <a class="kform-wa" href="https://wa.me/212636371063?text=Bonjour%20Kop%C3%A9%2C%20" target="_blank" rel="noopener">Ou écrivez-nous sur WhatsApp</a>
+  </form>
+</dialog>
+
+<script src="assets/site.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "86370a80b3de4fbbbb4326fadc4ddd93"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
