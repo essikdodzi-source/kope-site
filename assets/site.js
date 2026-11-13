@@ -165,12 +165,12 @@
     }).catch(function () {});
 })();
 
-// « Découvrir » une catégorie : on descend aux métiers et on met en valeur ceux qui correspondent.
+// « Voir qui peut aider » : on descend aux domaines et on met en valeur ceux qui correspondent.
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('.go[data-show]').forEach(function (a) {
     a.addEventListener('click', function (e) {
-      var sec = document.getElementById('metiers'); if (!sec) return;
+      var sec = document.getElementById('entraide'); if (!sec) return;
       e.preventDefault();
       var want = a.getAttribute('data-show').split(',');
       var tiles = Array.prototype.slice.call(document.querySelectorAll('.trade'));
@@ -180,5 +180,33 @@
       (first || sec).scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
       setTimeout(function () { tiles.forEach(function (t) { t.classList.remove('pick'); }); }, 4000);
     });
+  });
+})();
+
+// Images : un toucher les ouvre en grand, avec leur légende ; Échap, la croix ou un toucher à côté les ferment.
+(function () {
+  var sel = '.hero-visual .frame img, .band img, .cat .ph img, .fstep .ph img, .pro-imgs img, .mosaic img, .ex-top img, .duo-img img, .cta-img img, .g-shot img';
+  var imgs = document.querySelectorAll(sel);
+  if (!imgs.length) return;
+  var box = document.createElement('dialog');
+  box.className = 'lb';
+  box.setAttribute('aria-label', 'Image agrandie');
+  box.innerHTML = '<button class="lb-x" type="button" aria-label="Fermer">×</button><figure><img alt=""><figcaption></figcaption></figure>';
+  document.body.appendChild(box);
+  var big = box.querySelector('img'), cap = box.querySelector('figcaption');
+  var close = function () { if (box.open) box.close(); };
+  box.querySelector('.lb-x').addEventListener('click', close);
+  box.addEventListener('click', function (e) { if (e.target === box) close(); });
+  imgs.forEach(function (im) {
+    im.classList.add('zoom');
+    im.setAttribute('tabindex', '0');
+    im.setAttribute('role', 'button');
+    var open = function (e) {
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      big.src = im.getAttribute('src'); big.alt = im.alt || ''; cap.textContent = im.alt || '';
+      if (typeof box.showModal === 'function') box.showModal(); else window.open(im.getAttribute('src'), '_blank');
+    };
+    im.addEventListener('click', open);
+    im.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') open(e); });
   });
 })();
