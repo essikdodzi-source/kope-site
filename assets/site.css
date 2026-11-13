@@ -425,3 +425,15 @@ p{margin:0}
 .trade.pick{outline:4px solid var(--y);outline-offset:3px;animation:kpick 1s ease-in-out 3}
 @keyframes kpick{50%{transform:scale(1.04)}}
 @media (prefers-reduced-motion:reduce){.trade.pick{animation:none}}
+
+/* Images agrandies au toucher */
+img.zoom{cursor:zoom-in}
+img.zoom:focus-visible{outline:3px solid var(--y);outline-offset:3px}
+.lb{border:0;padding:0;background:transparent;max-width:min(1200px,94vw);max-height:92vh;overflow:visible}
+.lb::backdrop{background:rgba(10,10,10,.86)}
+.lb figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px}
+.lb img{max-width:min(1200px,94vw);max-height:80vh;width:auto;height:auto;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.5);background:#fff}
+.lb figcaption{color:#fff;font-size:15.5px;text-align:center;max-width:720px;line-height:1.45}
+.lb-x{position:fixed;top:14px;right:16px;width:46px;height:46px;border-radius:50%;border:0;background:var(--y);color:var(--k);font-size:28px;line-height:1;cursor:pointer}
+.head-c .lead a{color:inherit;text-decoration-color:var(--y);text-decoration-thickness:2px;text-underline-offset:3px}
+.cat .go[data-form]{cursor:pointer}
