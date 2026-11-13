@@ -437,33 +437,3 @@ img.zoom:focus-visible{outline:3px solid var(--y);outline-offset:3px}
 .lb-x{position:fixed;top:14px;right:16px;width:46px;height:46px;border-radius:50%;border:0;background:var(--y);color:var(--k);font-size:28px;line-height:1;cursor:pointer}
 .head-c .lead a{color:inherit;text-decoration-color:var(--y);text-decoration-thickness:2px;text-underline-offset:3px}
 .cat .go[data-form]{cursor:pointer}
-
-/* Séjour : sur deux colonnes, la troisième carte prend toute la largeur (jamais seule dans un coin) */
-@media (max-width:960px) and (min-width:641px){
-  .examples .ex:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;align-items:center}
-  .examples .ex:last-child:nth-child(odd) .ex-top{aspect-ratio:auto;height:100%;min-height:240px}
-}
-
-/* Résultats d'une recherche ou d'un filtre : les images en grand, centrées */
-.res{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;margin:34px auto 0;max-width:1100px}
-.res[hidden]{display:none}
-.res figure{margin:0;flex:0 1 520px;max-width:520px;background:var(--w);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-h);animation:kres .35s ease}
-.res[data-n="1"] figure{flex-basis:640px;max-width:640px}
-.res img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;cursor:zoom-in}
-.res figcaption{padding:12px 16px 14px;font-size:15px;color:var(--muted);text-align:center}
-@keyframes kres{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.cats.filtered{display:flex;flex-wrap:wrap;justify-content:center}
-.cats.filtered .cat{flex:0 1 340px;max-width:380px}
-.cats.filtered .cat.big{flex-basis:520px;max-width:560px;display:flex;flex-direction:column}
-.cats.filtered .cat.big .ph{min-height:260px}
-@media (max-width:640px){.res figure,.res[data-n="1"] figure{flex-basis:100%}}
-/* 16 domaines : 4 par ligne, jamais un seul à la fin */
-.trades{grid-template-columns:repeat(4,1fr)}
-@media (max-width:1100px){.trades{grid-template-columns:repeat(4,1fr)}}
-@media (max-width:700px){.trades{grid-template-columns:1fr 1fr}}
-.cats .cat.hide{display:none!important}
-/* Filtré : les images sont déjà en grand au-dessus, les cartes gardent le texte et le bouton */
-.cats.filtered .cat .ph{display:none}
-.cats.filtered .cat.big{background:var(--w);color:var(--k);border-color:var(--line,#e8e8e8)}
-.cats.filtered .cat.big p{color:var(--muted)}
-.cats.filtered .cat .cat-body .ic{margin-top:0}
