@@ -103,7 +103,7 @@
       </div>
     </div>
     <div class="hero-visual rv">
-      <div class="frame"><img src="assets/img/client-demande.webp" srcset="assets/img/client-demande-800.webp 800w, assets/img/client-demande.webp 1600w" sizes="(max-width:1000px) 100vw, 56vw" alt="Une voisine confie ses sacs de charbon à un jeune du quartier" width="1600" height="900" fetchpriority="high"></div>
+      <div class="frame"><img src="assets/img/client-demande.webp" data-k="déménagement porter" srcset="assets/img/client-demande-800.webp 800w, assets/img/client-demande.webp 1600w" sizes="(max-width:1000px) 100vw, 56vw" alt="Une voisine confie ses sacs de charbon à un jeune du quartier" width="1600" height="900" fetchpriority="high"></div>
       <div class="float f1"><span class="ic"><svg><use href="#i-pin"/></svg></span><span>Distance affichée<small>pour choisir au plus près</small></span></div>
       <div class="float f2"><span class="ic"><svg><use href="#i-check"/></svg></span><span>Commission claire<small><span data-tarif="client">5</span> % pour vous · <span data-tarif="provider">5</span> % pour celui qui aide<span data-tarif-after="short"></span></small></span></div>
     </div>
@@ -147,9 +147,10 @@
       <button class="chip" type="button">Champ</button>
     </div>
 
+    <div class="res" id="resultats" aria-live="polite" hidden></div>
     <div class="cats" id="categories">
       <article class="cat big rv" data-k="maison réparation plomberie plombier robinet électricité électricien menuiserie menuisier maçonnerie maçon peinture toiture toit dépannage mécanique mécanicien voiture panne">
-        <div class="ph"><img src="assets/img/hero-kope.webp" alt="Un plombier montre son prix dans l'appli Kɔƒe à une famille" width="1600" height="900" loading="lazy"></div>
+        <div class="ph"><img src="assets/img/hero-kope.webp" data-k="plomberie plombier robinet eau" alt="Un plombier montre son prix dans l'appli Kɔƒe à une famille" width="1600" height="900" loading="lazy"></div>
         <div class="cat-body">
           <span class="ic"><svg><use href="#i-wrench"/></svg></span>
           <h3>Maison et réparations</h3>
@@ -158,7 +159,7 @@
         </div>
       </article>
       <article class="cat rv" data-k="ménage nettoyage entretien lessive repassage">
-        <div class="ph"><img src="assets/img/menage-terrasse.webp" srcset="assets/img/menage-terrasse-800.webp 800w, assets/img/menage-terrasse.webp 1536w" sizes="(max-width:960px) 100vw, 50vw" alt="Une jeune femme frotte la cour" width="800" height="533" loading="lazy"></div>
+        <div class="ph"><img src="assets/img/menage-terrasse.webp" data-k="ménage nettoyage cour" srcset="assets/img/menage-terrasse-800.webp 800w, assets/img/menage-terrasse.webp 1536w" sizes="(max-width:960px) 100vw, 50vw" alt="Une jeune femme frotte la cour" width="800" height="533" loading="lazy"></div>
         <div class="cat-body">
           <span class="ic"><svg><use href="#i-broom"/></svg></span>
           <h3>Ménage et lessive</h3>
@@ -167,7 +168,7 @@
         </div>
       </article>
       <article class="cat rv" data-k="courses livraison commissions marché course colis">
-        <div class="ph"><img src="assets/img/courses-commissionnaire.webp" srcset="assets/img/courses-commissionnaire-800.webp 800w, assets/img/courses-commissionnaire.webp 1536w" sizes="(max-width:960px) 100vw, 50vw" alt="Un commissionnaire achète du ciment pour un voisin, qui valide dans l'appli" width="800" height="533" loading="lazy"></div>
+        <div class="ph"><img src="assets/img/courses-commissionnaire.webp" data-k="courses livraison commissions achat" srcset="assets/img/courses-commissionnaire-800.webp 800w, assets/img/courses-commissionnaire.webp 1536w" sizes="(max-width:960px) 100vw, 50vw" alt="Un commissionnaire achète du ciment pour un voisin, qui valide dans l'appli" width="800" height="533" loading="lazy"></div>
         <div class="cat-body">
           <span class="ic"><svg><use href="#i-bag"/></svg></span>
           <h3>Courses et livraisons</h3>
@@ -176,7 +177,7 @@
         </div>
       </article>
       <article class="cat rv" data-k="déménagement transport déplacement chauffeur moto taxi porter">
-        <div class="ph"><img src="assets/img/demenagement-colis.webp" srcset="assets/img/demenagement-colis-800.webp 800w, assets/img/demenagement-colis.webp 1536w" sizes="(max-width:960px) 100vw, 50vw" alt="Un jeune déménageur et un voisin âgé confirment le déménagement dans l'appli" width="800" height="450" loading="lazy"></div>
+        <div class="ph"><img src="assets/img/demenagement-colis.webp" data-k="déménagement transport porter" srcset="assets/img/demenagement-colis-800.webp 800w, assets/img/demenagement-colis.webp 1536w" sizes="(max-width:960px) 100vw, 50vw" alt="Un jeune déménageur et un voisin âgé confirment le déménagement dans l'appli" width="800" height="450" loading="lazy"></div>
         <div class="cat-body">
           <span class="ic"><svg><use href="#i-truck"/></svg></span>
           <h3>Déménager, porter, transporter</h3>
@@ -185,7 +186,7 @@
         </div>
       </article>
       <article class="cat rv" data-k="champ agriculture désherbage récolte village bois">
-        <div class="ph"><img src="assets/img/champ-houe.webp" alt="Un jeune désherbe un champ de maïs à la houe" width="374" height="332" loading="lazy"></div>
+        <div class="ph"><img src="assets/img/champ-houe.webp" data-k="champ désherbage" alt="Un jeune désherbe un champ de maïs à la houe" width="374" height="332" loading="lazy"></div>
         <div class="cat-body">
           <span class="ic"><svg><use href="#i-leaf"/></svg></span>
           <h3>Au champ</h3>
@@ -194,7 +195,7 @@
         </div>
       </article>
       <article class="cat rv" data-k="beauté coiffure coiffeur coiffeuse tresses barbier maquillage">
-        <div class="ph"><img src="assets/img/metier-coiffeuse.webp" alt="Une coiffeuse fait des tresses à une voisine" width="380" height="332" loading="lazy"></div>
+        <div class="ph"><img src="assets/img/metier-coiffeuse.webp" data-k="coiffure tresses beauté" alt="Une coiffeuse fait des tresses à une voisine" width="380" height="332" loading="lazy"></div>
         <div class="cat-body">
           <span class="ic"><svg><use href="#i-scissors"/></svg></span>
           <h3>Coiffure et beauté</h3>
@@ -233,6 +234,7 @@
       <button class="trade rv" type="button" data-q="Menuiserie"><img src="assets/img/metier-menuisier.webp" alt="Un menuisier construit une boutique en bois" width="380" height="336" loading="lazy"><span>Menuiserie <i><svg><use href="#i-arrow"/></svg></i></span></button>
       <button class="trade rv" type="button" data-q="Toiture"><img src="assets/img/metier-toiture.webp" alt="Un jeune refait un toit de paille au village" width="380" height="336" loading="lazy"><span>Toiture <i><svg><use href="#i-arrow"/></svg></i></span></button>
       <button class="trade rv" type="button" data-q="Ménage"><img src="assets/img/metier-agente-menage.webp" alt="Un jeune homme lave le sol" width="380" height="336" loading="lazy"><span>Ménage <i><svg><use href="#i-arrow"/></svg></i></span></button>
+      <button class="trade rv" type="button" data-q="Ménage" data-k="nettoyage cour"><img src="assets/img/metier-menage-cour.webp" alt="Une jeune femme frotte la cour" width="380" height="336" loading="lazy"><span>Ménage <i><svg><use href="#i-arrow"/></svg></i></span></button>
       <button class="trade rv" type="button" data-q="Lessive"><img src="assets/img/metier-lessive-cour.webp" alt="Une femme fait la lessive dans la cour" width="380" height="336" loading="lazy"><span>Lessive <i><svg><use href="#i-arrow"/></svg></i></span></button>
       <button class="trade rv" type="button" data-q="Cuisine"><img src="assets/img/metier-cuisine.webp" alt="Une cuisinière prépare un buffet de fête" width="380" height="336" loading="lazy"><span>Cuisine <i><svg><use href="#i-arrow"/></svg></i></span></button>
       <button class="trade rv" type="button" data-q="Coiffure"><img src="assets/img/metier-coiffure.webp" alt="Un jeune homme tresse les cheveux d'une fillette" width="380" height="336" loading="lazy"><span>Coiffure <i><svg><use href="#i-arrow"/></svg></i></span></button>
@@ -256,19 +258,19 @@
     </div>
     <ol class="flow" style="list-style:none;margin:0;padding:0">
       <li class="fstep rv">
-        <div class="ph"><img src="assets/img/client-kope.webp" alt="Une famille cherche un répétiteur dans l'appli Kɔƒe" width="1400" height="788" loading="lazy"></div>
+        <div class="ph"><img src="assets/img/client-kope.webp" data-k="soutien scolaire cours répétiteur" alt="Une famille cherche un répétiteur dans l'appli Kɔƒe" width="1400" height="788" loading="lazy"></div>
         <div class="fstep-body"><h3>Vous dites ce qu'il vous faut</h3><p>Ce que vous voulez, votre quartier, le jour et votre budget. Ajoutez des photos si cela aide.</p></div>
       </li>
       <li class="fstep rv">
-        <div class="ph"><img src="assets/img/cuisiniere-proposition.webp" srcset="assets/img/cuisiniere-proposition-800.webp 800w, assets/img/cuisiniere-proposition.webp 1600w" sizes="(max-width:960px) 100vw, 50vw" alt="Une cuisinière photographie ses plats pour sa proposition dans l'appli Kɔƒe" width="800" height="451" loading="lazy" style="object-position:70% 50%"></div>
+        <div class="ph"><img src="assets/img/cuisiniere-proposition.webp" data-k="cuisine repas fête" srcset="assets/img/cuisiniere-proposition-800.webp 800w, assets/img/cuisiniere-proposition.webp 1600w" sizes="(max-width:960px) 100vw, 50vw" alt="Une cuisinière photographie ses plats pour sa proposition dans l'appli Kɔƒe" width="800" height="451" loading="lazy" style="object-position:70% 50%"></div>
         <div class="fstep-body"><h3>Vos voisins proposent</h3><p>Ils voient votre demande et la distance, puis vous envoient leur prix, leur jour et leur heure, avec les photos de ce qu'ils ont déjà fait.</p></div>
       </li>
       <li class="fstep rv">
-        <div class="ph"><img src="assets/img/accord-menuisier.webp" srcset="assets/img/accord-menuisier-800.webp 800w, assets/img/accord-menuisier.webp 1600w" sizes="(max-width:960px) 100vw, 50vw" alt="Une commerçante montre au menuisier la boutique voulue dans l'appli Kɔƒe" width="800" height="450" loading="lazy" style="object-position:65% 50%"></div>
+        <div class="ph"><img src="assets/img/accord-menuisier.webp" data-k="menuiserie menuisier boutique bois" srcset="assets/img/accord-menuisier-800.webp 800w, assets/img/accord-menuisier.webp 1600w" sizes="(max-width:960px) 100vw, 50vw" alt="Une commerçante montre au menuisier la boutique voulue dans l'appli Kɔƒe" width="800" height="450" loading="lazy" style="object-position:65% 50%"></div>
         <div class="fstep-body"><h3>Vous vous accordez</h3><p>Prix et conditions se fixent dans la discussion. Le travail est fait, photos à l'appui.</p></div>
       </li>
       <li class="fstep rv">
-        <div class="ph"><img src="assets/img/travail-confirme.webp" srcset="assets/img/travail-confirme-800.webp 800w, assets/img/travail-confirme.webp 1600w" sizes="(max-width:960px) 100vw, 50vw" alt="Le voisin confirme le travail dans l'appli Kɔƒe, le jeune déménageur est payé" width="800" height="450" loading="lazy"></div>
+        <div class="ph"><img src="assets/img/travail-confirme.webp" data-k="déménagement transport" srcset="assets/img/travail-confirme-800.webp 800w, assets/img/travail-confirme.webp 1600w" sizes="(max-width:960px) 100vw, 50vw" alt="Le voisin confirme le travail dans l'appli Kɔƒe, le jeune déménageur est payé" width="800" height="450" loading="lazy"></div>
         <div class="fstep-body"><h3>« C'est bien fait »</h3><p>Celui qui a aidé est payé quand vous le confirmez. Puis chacun note l'autre.</p></div>
       </li>
     </ol>
@@ -279,8 +281,8 @@
 <section class="section" id="tamesusuwo">
   <div class="wrap pro">
     <div class="pro-imgs rv">
-      <div class="frame"><img src="assets/img/porteur-sacs.webp" alt="Un jeune homme porte des sacs de maïs" width="1400" height="788" loading="lazy"></div>
-      <div class="frame"><img src="assets/img/gain-recu.webp" alt="Une jeune femme voit son gain arriver sur son téléphone après le ménage" width="1600" height="900" loading="lazy"></div>
+      <div class="frame"><img src="assets/img/porteur-sacs.webp" data-k="déménagement porter sacs champ" alt="Un jeune homme porte des sacs de maïs" width="1400" height="788" loading="lazy"></div>
+      <div class="frame"><img src="assets/img/gain-recu.webp" data-k="ménage nettoyage" alt="Une jeune femme voit son gain arriver sur son téléphone après le ménage" width="1600" height="900" loading="lazy"></div>
     </div>
     <div class="rv">
       <span class="eyebrow">Donnez un coup de main et gagnez des sous</span>
@@ -308,10 +310,10 @@
       <p class="lead">Récoltes, sacs à porter jusqu'au marché, maison à bâtir, repas de fête : les habitants de votre village prêts à vous prêter main-forte, pour une journée ou plus.</p>
     </div>
     <div class="mosaic rv">
-      <figure><img src="assets/img/recolte-cacao.webp" srcset="assets/img/recolte-cacao-700.webp 700w, assets/img/recolte-cacao.webp 1180w" sizes="(max-width:960px) 100vw, 45vw" alt="Des femmes récoltent des cabosses de cacao" loading="lazy"><figcaption>Récolte</figcaption></figure>
-      <figure class="wide"><img src="assets/img/village-entraide.webp" srcset="assets/img/village-entraide-900.webp 900w, assets/img/village-entraide.webp 1536w" sizes="(max-width:960px) 100vw, 55vw" alt="Au village, on construit, on porte, on cuisine, on soigne et on s'entraide" loading="lazy"><figcaption>Entraide</figcaption></figure>
-      <figure><img src="assets/img/village-transport.webp" srcset="assets/img/village-transport-800.webp 800w, assets/img/village-transport.webp 1600w" sizes="(max-width:960px) 100vw, 30vw" alt="Un transporteur et son camion chargé de sacs de charbon" loading="lazy" style="object-position:30% 40%"><figcaption>Transport</figcaption></figure>
-      <figure><img src="assets/img/cuisine-maison.webp" srcset="assets/img/cuisine-maison-800.webp 800w, assets/img/cuisine-maison.webp 1536w" sizes="(max-width:960px) 100vw, 30vw" alt="Une jeune maman vend du riz au bord de la route" loading="lazy" style="object-position:55% 40%"><figcaption>Repas</figcaption></figure>
+      <figure><img src="assets/img/recolte-cacao.webp" data-k="champ récolte" srcset="assets/img/recolte-cacao-700.webp 700w, assets/img/recolte-cacao.webp 1180w" sizes="(max-width:960px) 100vw, 45vw" alt="Des femmes récoltent des cabosses de cacao" loading="lazy"><figcaption>Récolte</figcaption></figure>
+      <figure class="wide"><img src="assets/img/village-entraide.webp" data-k="champ maçonnerie construction cuisine électricité" srcset="assets/img/village-entraide-900.webp 900w, assets/img/village-entraide.webp 1536w" sizes="(max-width:960px) 100vw, 55vw" alt="Au village, on construit, on porte, on cuisine, on soigne et on s'entraide" loading="lazy"><figcaption>Entraide</figcaption></figure>
+      <figure><img src="assets/img/village-transport.webp" data-k="livraison transport déménagement" srcset="assets/img/village-transport-800.webp 800w, assets/img/village-transport.webp 1600w" sizes="(max-width:960px) 100vw, 30vw" alt="Un transporteur et son camion chargé de sacs de charbon" loading="lazy" style="object-position:30% 40%"><figcaption>Transport</figcaption></figure>
+      <figure><img src="assets/img/cuisine-maison.webp" data-k="cuisine repas" srcset="assets/img/cuisine-maison-800.webp 800w, assets/img/cuisine-maison.webp 1536w" sizes="(max-width:960px) 100vw, 30vw" alt="Une jeune maman vend du riz au bord de la route" loading="lazy" style="object-position:55% 40%"><figcaption>Repas</figcaption></figure>
     </div>
   </div>
 </section>
@@ -326,15 +328,15 @@
     </div>
     <div class="examples">
       <article class="ex rv">
-        <div class="ex-top"><img src="assets/img/sejour-aeroport.webp" srcset="assets/img/sejour-aeroport-800.webp 800w, assets/img/sejour-aeroport.webp 1536w" sizes="(max-width:960px) 100vw, 33vw" alt="Un chauffeur attend un voyageur à l'aéroport de Lomé" loading="lazy"><span class="tag">À l'arrivée</span></div>
+        <div class="ex-top"><img src="assets/img/sejour-aeroport.webp" data-k="chauffeur transport voiture" srcset="assets/img/sejour-aeroport-800.webp 800w, assets/img/sejour-aeroport.webp 1536w" sizes="(max-width:960px) 100vw, 33vw" alt="Un chauffeur attend un voyageur à l'aéroport de Lomé" loading="lazy"><span class="tag">À l'arrivée</span></div>
         <div class="ex-body"><h3>Chauffeur et voiture</h3><p>Quelqu'un vous attend à l'aéroport, puis vous conduit pendant le séjour.</p></div>
       </article>
       <article class="ex rv">
-        <div class="ex-top"><img src="assets/img/sejour-logement.webp" srcset="assets/img/sejour-logement-800.webp 800w, assets/img/sejour-logement.webp 1536w" sizes="(max-width:960px) 100vw, 33vw" alt="Une propriétaire remet les clés d'une villa à un voyageur" loading="lazy"><span class="tag">Logement</span></div>
+        <div class="ex-top"><img src="assets/img/sejour-logement.webp" data-k="logement" srcset="assets/img/sejour-logement-800.webp 800w, assets/img/sejour-logement.webp 1536w" sizes="(max-width:960px) 100vw, 33vw" alt="Une propriétaire remet les clés d'une villa à un voyageur" loading="lazy"><span class="tag">Logement</span></div>
         <div class="ex-body"><h3>Chambre, studio ou maison</h3><p>À la nuit ou au mois, avec photos et vidéos. Vous réservez avant de partir.</p></div>
       </article>
       <article class="ex rv">
-        <div class="ex-top"><img src="assets/img/courses-commissionnaire.webp" srcset="assets/img/courses-commissionnaire-800.webp 800w, assets/img/courses-commissionnaire.webp 1536w" sizes="(max-width:960px) 100vw, 33vw" alt="Un commissionnaire achète pour un client qui valide à distance" loading="lazy"><span class="tag">Même de loin</span></div>
+        <div class="ex-top"><img src="assets/img/courses-commissionnaire.webp" data-k="courses livraison commissions achat" srcset="assets/img/courses-commissionnaire-800.webp 800w, assets/img/courses-commissionnaire.webp 1536w" sizes="(max-width:960px) 100vw, 33vw" alt="Un commissionnaire achète pour un client qui valide à distance" loading="lazy"><span class="tag">Même de loin</span></div>
         <div class="ex-body"><h3>Courses et achats pour vos proches</h3><p>Un voisin achète, envoie la photo du ticket et livre. Les boutiques partenaires montrent leurs prix.</p></div>
       </article>
     </div>
