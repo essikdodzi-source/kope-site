@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Mode d'emploi — Kɔƒe</title>
-<meta name="description" content="Comment utiliser Kɔƒe, écran par écran : demander un coup de main, en donner un, préparer un séjour, trouver un logement, faire faire une course.">
+<meta name="description" content="Comment utiliser Kɔƒe : demander un coup de main, en donner un, préparer un séjour, trouver un logement, faire faire une course.">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0E0E0E">
 <link rel="icon" href="assets/img/favicon.png">
@@ -14,9 +14,12 @@
 <style>
 .g-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}.g-nav a{background:var(--y);color:#111;font-weight:700;padding:9px 14px;border-radius:999px;text-decoration:none;font-size:15px}
 .g-sec{padding:44px 0 8px}.g-sec h2{font-size:clamp(24px,3vw,34px);font-weight:800;margin-bottom:22px}
-.g-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px}
-.g-step figure{margin:0}.g-step img{width:100%;height:auto;border-radius:26px;border:6px solid #111;background:#fff;display:block;box-shadow:0 10px 30px #0002}
-.g-step figcaption{margin-top:12px;font-size:16px;line-height:1.45}.g-step b{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--y);margin-right:6px;font-size:14px}
+.g-two{display:grid;grid-template-columns:minmax(0,280px) 1fr;gap:36px;align-items:center}
+.g-shot{margin:0}.g-shot img{width:100%;height:auto;border-radius:26px;border:6px solid #111;background:#fff;display:block;box-shadow:0 10px 30px #0002}
+.g-list{margin:0;padding-left:22px;font-size:17px;line-height:1.55}.g-list li{margin-bottom:12px}.g-list li::marker{font-weight:800}
+.g-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.g-card{border:2px solid #111;border-radius:20px;padding:20px;background:#fff}.g-card h3{font-size:19px;font-weight:800;margin:0 0 8px}.g-card p{margin:0;font-size:15.5px;line-height:1.5}
+@media(max-width:700px){.g-two{grid-template-columns:1fr;gap:20px}.g-shot{max-width:240px;margin:0 auto}}
 .g-note{color:#6b6b6b;font-size:14px;margin-top:34px}
 </style>
 </head>
@@ -41,34 +44,29 @@
   </div>
 </header>
 <main>
-<section class="doc-hero"><div class="wrap"><span class="eyebrow">Mode d'emploi</span><h1>Kɔƒe, écran par écran</h1><p>Tes voisins prêts à t'aider, en quelques gestes. Voici les vrais écrans de l'appli.</p><div class="g-nav"><a href="#aide">Demander un coup de main</a><a href="#donner">Donner un coup de main</a><a href="#sejour">Préparer un séjour</a><a href="#logement">Trouver un logement</a><a href="#courses">Faire faire une course</a><a href="#boutiques">Commander en boutique</a></div></div></section>
+<section class="doc-hero"><div class="wrap"><span class="eyebrow">Mode d'emploi</span><h1>Kɔƒe en quelques gestes</h1><p>Tes voisins prêts à t'aider, un métier au bout des doigts. Voici comment ça se passe.</p><div class="g-nav"><a href="#aide">Demander un coup de main</a><a href="#donner">Donner un coup de main</a><a href="#autres">Séjours, logements, courses, boutiques</a></div></div></section>
 <div class="wrap">
-<section class="g-sec" id="aide"><h2>Demander un coup de main</h2><div class="g-row">
-<div class="g-step"><figure><img src="assets/img/guide/05_nouvelle_demande.jpg" alt="Wò didiwo : dites ce qu'il vous faut, avec une photo si besoin." width="540" height="1168" loading="lazy"><figcaption><b>1</b>Wò didiwo : dites ce qu'il vous faut, avec une photo si besoin.</figcaption></figure></div>
-<div class="g-step"><figure><img src="assets/img/guide/13_negociation.jpg" alt="Vos voisins répondent avec leur prix. Vous vous entendez dans la discussion." width="540" height="1168" loading="lazy"><figcaption><b>2</b>Vos voisins répondent avec leur prix. Vous vous entendez dans la discussion.</figcaption></figure></div>
-<div class="g-step"><figure><img src="assets/img/guide/15b_contrat_a_payer.jpg" alt="C'est conclu : vous payez par Mobile Money ou en espèces." width="540" height="1168" loading="lazy"><figcaption><b>3</b>C'est conclu : vous payez par Mobile Money ou en espèces.</figcaption></figure></div>
-<div class="g-step"><figure><img src="assets/img/guide/14_suivi.jpg" alt="Vous suivez le travail. C'est bien fait ? Vous confirmez." width="540" height="1168" loading="lazy"><figcaption><b>4</b>Vous suivez le travail. C'est bien fait ? Vous confirmez.</figcaption></figure></div>
-</div></section>
-<section class="g-sec" id="donner"><h2>Donner un coup de main</h2><div class="g-row">
-<div class="g-step"><figure><img src="assets/img/guide/08_accueil_prestataire.jpg" alt="Les demandes de vos voisins défilent sur votre accueil." width="540" height="1168" loading="lazy"><figcaption><b>1</b>Les demandes de vos voisins défilent sur votre accueil.</figcaption></figure></div>
-<div class="g-step"><figure><img src="assets/img/guide/13b_negociation_prestataire.jpg" alt="Wò tamesusuwo : vous proposez votre prix, vous vous entendez." width="540" height="1168" loading="lazy"><figcaption><b>2</b>Wò tamesusuwo : vous proposez votre prix, vous vous entendez.</figcaption></figure></div>
-<div class="g-step"><figure><img src="assets/img/guide/20_mes_realisations.jpg" alt="Vos réalisations en photos et vidéos donnent confiance." width="540" height="1168" loading="lazy"><figcaption><b>3</b>Vos réalisations en photos et vidéos donnent confiance.</figcaption></figure></div>
-</div></section>
-<section class="g-sec" id="sejour"><h2>Préparer un séjour</h2><div class="g-row">
-<div class="g-step"><figure><img src="assets/img/guide/21_sejours.jpg" alt="Chauffeur, voiture, logement, courses avant l'arrivée." width="540" height="1168" loading="lazy"><figcaption><b>1</b>Chauffeur, voiture, logement, courses avant l'arrivée.</figcaption></figure></div>
-<div class="g-step"><figure><img src="assets/img/guide/21b_mon_sejour.jpg" alt="Un tableau montre ce qui est prêt et ce qui reste à faire." width="540" height="1168" loading="lazy"><figcaption><b>2</b>Un tableau montre ce qui est prêt et ce qui reste à faire.</figcaption></figure></div>
-</div></section>
-<section class="g-sec" id="logement"><h2>Trouver un logement</h2><div class="g-row">
-<div class="g-step"><figure><img src="assets/img/guide/22_logements.jpg" alt="À la nuit ou au mois, avec photos et vidéos." width="540" height="1168" loading="lazy"><figcaption><b>1</b>À la nuit ou au mois, avec photos et vidéos.</figcaption></figure></div>
-<div class="g-step"><figure><img src="assets/img/guide/22b_fiche_logement.jpg" alt="Vous choisissez vos dates et vous vous entendez avec le propriétaire." width="540" height="1168" loading="lazy"><figcaption><b>2</b>Vous choisissez vos dates et vous vous entendez avec le propriétaire.</figcaption></figure></div>
-</div></section>
-<section class="g-sec" id="courses"><h2>Faire faire une course</h2><div class="g-row">
-<div class="g-step"><figure><img src="assets/img/guide/23_courses_pour_moi.jpg" alt="Dites quoi acheter et où : un voisin s'en charge." width="540" height="1168" loading="lazy"><figcaption><b>1</b>Dites quoi acheter et où : un voisin s'en charge.</figcaption></figure></div>
-<div class="g-step"><figure><img src="assets/img/guide/23b_suivi_course_client.jpg" alt="Photo du ticket, livraison, et un code à la remise." width="540" height="1168" loading="lazy"><figcaption><b>2</b>Photo du ticket, livraison, et un code à la remise.</figcaption></figure></div>
-</div></section>
-<section class="g-sec" id="boutiques"><h2>Commander en boutique</h2><div class="g-row">
-<div class="g-step"><figure><img src="assets/img/guide/24b_commerce.jpg" alt="Le catalogue de nos partenaires, avec leurs prix." width="540" height="1168" loading="lazy"><figcaption><b>1</b>Le catalogue de nos partenaires, avec leurs prix.</figcaption></figure></div>
-<div class="g-step"><figure><img src="assets/img/guide/24d_commande_cochee.jpg" alt="Vous cochez, vous commandez, la boutique confirme." width="540" height="1168" loading="lazy"><figcaption><b>2</b>Vous cochez, vous commandez, la boutique confirme.</figcaption></figure></div>
+<section class="g-sec" id="aide"><div class="g-two">
+<figure class="g-shot"><img src="assets/img/guide/05_nouvelle_demande.jpg" alt="L'écran Wò didiwo de l'appli Kɔƒe" width="540" height="1168" loading="lazy"></figure>
+<div><h2>Demander un coup de main</h2><ol class="g-list">
+<li><b>Wò didiwo.</b> Dites ce qu'il vous faut, avec une photo si besoin.</li>
+<li><b>Vos voisins répondent.</b> Chacun donne son prix ; vous vous entendez dans la discussion.</li>
+<li><b>C'est conclu.</b> Vous payez par Mobile Money ou en espèces.</li>
+<li><b>Le travail est fait.</b> Vous le suivez, et vous confirmez quand c'est bien fait.</li>
+</ol></div></div></section>
+<section class="g-sec" id="donner"><div class="g-two">
+<figure class="g-shot"><img src="assets/img/guide/08_accueil_prestataire.jpg" alt="L'accueil de celui qui donne un coup de main" width="540" height="1168" loading="lazy"></figure>
+<div><h2>Donner un coup de main</h2><ol class="g-list">
+<li><b>Les demandes défilent.</b> Celles de vos voisins arrivent sur votre accueil.</li>
+<li><b>Wò tamesusuwo.</b> Vous proposez votre prix et vous vous entendez.</li>
+<li><b>Vous faites le travail.</b> Une fois confirmé, vous êtes payé.</li>
+<li><b>Vos réalisations parlent pour vous.</b> Photos et vidéos donnent confiance aux prochains.</li>
+</ol></div></div></section>
+<section class="g-sec" id="autres"><h2>Et aussi</h2><div class="g-cards">
+<div class="g-card"><h3>Préparer un séjour</h3><p>Chauffeur, voiture, logement, courses avant l'arrivée. Un tableau montre ce qui est prêt et ce qui reste à faire.</p></div>
+<div class="g-card"><h3>Trouver un logement</h3><p>À la nuit ou au mois, avec photos et vidéos. Vous choisissez vos dates et vous vous entendez avec le propriétaire.</p></div>
+<div class="g-card"><h3>Faire faire une course</h3><p>Dites quoi acheter et où : un voisin s'en charge. Photo du ticket, livraison, et un code à la remise.</p></div>
+<div class="g-card"><h3>Commander en boutique</h3><p>Le catalogue de nos partenaires, avec leurs prix. Vous cochez, vous commandez, la boutique confirme.</p></div>
 </div></section>
 <p class="g-note">Écrans de démonstration : les noms, lieux et prix sont fictifs.</p></div>
 </main>
