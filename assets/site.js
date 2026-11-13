@@ -87,13 +87,13 @@
   if (y) y.textContent = new Date().getFullYear();
 })();
 
-// Formulaire « Être prévenu du lancement » / « Devenir prestataire » : le message arrive dans Kopé Admin.
+// Formulaire « Être prévenu du lancement » / « Donnez un coup de main et gagnez des sous » : le message arrive dans Kopé Admin.
 (function () {
   var d = document.getElementById('kform');
   if (!d || typeof d.showModal !== 'function') return; // navigateur trop ancien : le lien WhatsApp reste
   var f = d.querySelector('form'), msg = d.querySelector('.kform-msg'), send = d.querySelector('.kform-send');
   var T = { launch: ['Être prévenu du lancement', "Laissez vos coordonnées : l'équipe Kɔƒe vous prévient dès que l'appli est disponible."],
-            provider: ['Devenir prestataire', "Dites-nous votre métier et votre quartier : l'équipe Kɔƒe vous recontacte pour votre inscription."] };
+            provider: ['Donnez un coup de main et gagnez des sous', "Pas besoin de diplôme : dites-nous ce que vous savez faire et votre quartier. L'équipe Kɔƒe vous recontacte pour votre inscription."] };
   var API = 'https://nkohlcactttqoljejpsv.supabase.co/functions/v1/kope/api/public/sitecontact';
   document.querySelectorAll('[data-form]').forEach(function (b) {
     b.addEventListener('click', function (e) {
@@ -136,6 +136,33 @@
     fetch('https://nkohlcactttqoljejpsv.supabase.co/functions/v1/kope/api/public/sitevisit',
       { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: body, keepalive: true }).catch(function () {});
   } catch (_) {}
+})();
+
+// Commissions affichées : lues sur le serveur à chaque visite (réglées dans Kɔƒe Admin), jamais figées
+// dans la page. Sans réponse du serveur, les chiffres écrits dans la page restent affichés.
+(function () {
+  var els = document.querySelectorAll('[data-tarif]');
+  var afters = document.querySelectorAll('[data-tarif-after]');
+  if ((!els.length && !afters.length) || !window.fetch) return;
+  fetch('https://nkohlcactttqoljejpsv.supabase.co/functions/v1/kope/api/public/tarifs')
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (t) {
+      if (!t) return;
+      els.forEach(function (e) {
+        var v = t[e.getAttribute('data-tarif')];
+        if (typeof v === 'number' && isFinite(v)) e.textContent = String(v);
+      });
+      // Tarif de lancement : compté pour chaque prestataire à partir de la validation de son inscription.
+      var a = t.after || {};
+      var ok = typeof a.provider === 'number' && a.months > 0 && a.provider !== t.provider;
+      afters.forEach(function (e) {
+        var k = e.getAttribute('data-tarif-after');
+        e.textContent = !ok ? '' : k === 'en'
+          ? ' during the first ' + a.months + ' months after their registration is approved, then ' + a.provider + '%'
+          : k === 'short' ? ', puis ' + a.provider + ' % après ' + a.months + ' mois'
+          : ' pendant les ' + a.months + ' premiers mois après la validation de son inscription, puis ' + a.provider + ' %';
+      });
+    }).catch(function () {});
 })();
 
 // « Découvrir » une catégorie : on descend aux métiers et on met en valeur ceux qui correspondent.
