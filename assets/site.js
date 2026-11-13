@@ -47,37 +47,67 @@
     var norm = function (s) {
       return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
     };
+    // Galerie des résultats : toutes les images qui parlent de la recherche, en grand et au centre.
+    var res = document.getElementById('resultats');
+    var grid = document.getElementById('categories');
+    var pics = [];
+    // Chaque image n'est montrée que pour ce qu'elle montre vraiment (ses propres mots-clés).
+    document.querySelectorAll('.trade').forEach(function (tr) { var im = tr.querySelector('img'); if (im) pics.push({ im: im, k: (tr.getAttribute('data-q') || '') + ' ' + (tr.getAttribute('data-k') || '') }); });
+    document.querySelectorAll('img[data-k]').forEach(function (im) { pics.push({ im: im, k: im.getAttribute('data-k') }); });
     var apply = function (term) {
       var t = norm(term).trim();
       var shown = 0;
       cats.forEach(function (c) {
-        var hit = !t || norm(c.getAttribute('data-k') + ' ' + c.textContent).indexOf(t) !== -1;
+        var hit = !t || new RegExp('(^|[^a-z0-9])' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).test(norm(c.getAttribute('data-k') + ' ' + c.textContent));
         c.classList.toggle('hide', !hit);
         if (hit) shown++;
       });
+      if (grid) grid.classList.toggle('filtered', !!t);
       if (none) none.style.display = shown ? 'none' : 'block';
+      if (!res) return;
+      // Mot entier au début : « ménage » ne ramène pas « déménagement ».
+      var re = new RegExp('(^|[^a-z0-9])' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+      var word = function (x) { return re.test(norm(x)); };
+      res.innerHTML = '';
+      if (!t) { res.hidden = true; return; }
+      var seen = {};
+      pics.forEach(function (p) {
+        var src = p.im.getAttribute('src');
+        if (seen[src] || seen[p.im.alt] || !word(p.k + ' ' + p.im.alt)) return;
+        seen[src] = 1; seen[p.im.alt] = 1;
+        var f = document.createElement('figure');
+        var im = document.createElement('img');
+        im.src = src; im.alt = p.im.alt; im.loading = 'lazy';
+        im.addEventListener('click', function () { p.im.click(); });
+        var cap = document.createElement('figcaption'); cap.textContent = p.im.alt;
+        f.appendChild(im); f.appendChild(cap); res.appendChild(f);
+      });
+      res.hidden = !res.children.length;
+      res.setAttribute('data-n', String(res.children.length));
     };
+    var reset = function () { apply(''); };
+    input.addEventListener('search', reset);
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       apply(input.value);
-      var target = document.getElementById('categories');
-      if (target) target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      var target = (document.getElementById('resultats') && !document.getElementById('resultats').hidden) ? document.getElementById('resultats') : document.getElementById('categories');
+      if (target) target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
     });
     input.addEventListener('input', function () { apply(input.value); });
     document.querySelectorAll('.trade').forEach(function (tile) {
       tile.addEventListener('click', function () {
         input.value = tile.getAttribute('data-q') || '';
         apply(input.value);
-        var target = document.getElementById('categories');
-        if (target) target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+        var target = (document.getElementById('resultats') && !document.getElementById('resultats').hidden) ? document.getElementById('resultats') : document.getElementById('categories');
+        if (target) target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
       });
     });
     document.querySelectorAll('.chip').forEach(function (chip) {
       chip.addEventListener('click', function () {
         input.value = chip.textContent;
         apply(input.value);
-        var target = document.getElementById('categories');
-        if (target) target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+        var target = (document.getElementById('resultats') && !document.getElementById('resultats').hidden) ? document.getElementById('resultats') : document.getElementById('categories');
+        if (target) target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
       });
     });
   }
