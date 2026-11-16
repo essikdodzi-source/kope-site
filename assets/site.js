@@ -240,3 +240,18 @@
     im.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') open(e); });
   });
 })();
+
+/* « Inviter mes proches » : partage du message validé (WhatsApp, SMS, Facebook…). */
+(function () {
+  var MSG = "Sur Kɔƒe, on fait l'aumône autrement : on confie une tâche à un voisin dans la peine, et il garde sa fierté. Rejoins-nous : https://kopetogo.com/telecharger";
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-invite]');
+    if (!b) return;
+    e.preventDefault();
+    if (navigator.share) {
+      navigator.share({ text: MSG }).catch(function () {});
+    } else {
+      window.open('https://wa.me/?text=' + encodeURIComponent(MSG), '_blank', 'noopener');
+    }
+  });
+})();
