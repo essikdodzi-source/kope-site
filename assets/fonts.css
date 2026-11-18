@@ -1,0 +1,5 @@
+/* Polices hébergées sur kopetogo.com (plus aucun appel à Google Fonts).
+   Inter (The Inter Project Authors) et Manrope (The Manrope Project Authors),
+   licence libre SIL Open Font License 1.1 : voir assets/fonts/OFL-*.txt. */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url('fonts/inter.woff?v=1') format('woff')}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:600 800;font-display:swap;src:url('fonts/manrope.woff?v=1') format('woff')}
