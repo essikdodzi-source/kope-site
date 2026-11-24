@@ -255,3 +255,18 @@
     }
   });
 })();
+
+// Visiteur d'un autre pays prévu (Bénin, Burkina, Côte d'Ivoire, Sénégal, Ghana) : un lien vers la page de son pays.
+(function () {
+  if (!/(^\/$|index\.html$)/.test(location.pathname)) return;
+  var pages = { BJ: ['benin', 'Vous êtes au Bénin ?'], BF: ['burkina-faso', 'Vous êtes au Burkina Faso ?'], CI: ['cote-divoire', "Vous êtes en Côte d'Ivoire ?"],
+    SN: ['senegal', 'Vous êtes au Sénégal ?'], GH: ['ghana', 'Are you in Ghana?'] };
+  fetch('https://nkohlcactttqoljejpsv.supabase.co/functions/v1/kope/api/public/geo').then(function (r) { return r.json(); }).then(function (j) {
+    var p = pages[String(j.country || '').toUpperCase()]; if (!p) return;
+    var a = document.createElement('a');
+    a.href = p[0] + '.html';
+    a.textContent = p[1] + (p[0] === 'ghana' ? ' Kɔƒe in Ghana →' : ' Kɔƒe dans votre pays →');
+    a.setAttribute('style', 'display:block;text-align:center;background:#FFD400;color:#111;font-weight:800;padding:10px 16px;text-decoration:none');
+    document.body.insertBefore(a, document.body.firstChild);
+  }).catch(function () {});
+})();
